@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NowConexion — Networking Empresarial en el Maule</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <meta name="description"
     content="NowConexion conecta empresarios y emprendedores del Maule en encuentros de networking de alto nivel. Únete a la red empresarial más activa de la región." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -111,6 +112,13 @@
 
     .nav-logo span {
       color: var(--verde);
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
     }
 
     .nav-links {
@@ -1576,7 +1584,9 @@
   <!-- ─── NAVEGACIÓN ─── -->
   <nav id="navbar">
     <div class="container nav-inner">
-      <a href="#hero" class="nav-logo">Now<span>Conexion</span></a>
+      <a href="#hero" class="nav-logo" aria-label="NowConexion">
+        <img src="nombrelogo.png" alt="NowConexion" />
+      </a>
       <ul class="nav-links">
         <li><a href="#sobre">Quiénes somos</a></li>
         <li><a href="#evento">Próximo evento</a></li>
