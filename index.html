@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOW Conexión — Networking Empresarial en el Maule</title>
-  <meta name="description" content="NOW Conexión conecta empresarios y emprendedores del Maule en encuentros de networking de alto nivel. Únete a la red empresarial más activa de la región." />
+  <title>NowConexion — Networking Empresarial en el Maule</title>
+  <meta name="description"
+    content="NowConexion conecta empresarios y emprendedores del Maule en encuentros de networking de alto nivel. Únete a la red empresarial más activa de la región." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <style>
     /* ─── Reset & Variables ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --verde:        #2D8A2E;
-      --verde-oscuro: #1F6420;
-      --verde-claro:  #E8F5E9;
-      --negro:        #1A1A1A;
-      --gris-oscuro:  #3A3A3A;
-      --gris-medio:   #888888;
-      --gris-claro:   #F5F5F5;
-      --blanco:       #FFFFFF;
-      --radius:       4px;
-      --font:         'Montserrat', sans-serif;
-      --transition:   .25s ease;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --verde: #2D8A2E;
+      --verde-oscuro: #1F6420;
+      --verde-claro: #E8F5E9;
+      --negro: #1A1A1A;
+      --gris-oscuro: #3A3A3A;
+      --gris-medio: #888888;
+      --gris-claro: #F5F5F5;
+      --blanco: #FFFFFF;
+      --radius: 4px;
+      --font: 'Montserrat', sans-serif;
+      --transition: .25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--font);
@@ -46,30 +57,49 @@
       display: block;
       margin-bottom: 16px;
     }
-    .divider { width: 48px; height: 4px; background: var(--verde); margin: 20px 0 40px; border-radius: 2px; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
-    .section { padding: 100px 0; }
+
+    .divider {
+      width: 48px;
+      height: 4px;
+      background: var(--verde);
+      margin: 20px 0 40px;
+      border-radius: 2px;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
 
     /* ─── Navegación ─── */
     nav {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(26,26,26,0);
+      background: rgba(26, 26, 26, 0);
       transition: background var(--transition), box-shadow var(--transition);
       padding: 24px 0;
     }
+
     nav.scrolled {
       background: var(--negro);
-      box-shadow: 0 2px 24px rgba(0,0,0,.3);
+      box-shadow: 0 2px 24px rgba(0, 0, 0, .3);
       padding: 16px 0;
     }
+
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     .nav-logo {
       font-size: 13px;
       font-weight: 800;
@@ -78,23 +108,32 @@
       color: var(--blanco);
       text-decoration: none;
     }
-    .nav-logo span { color: var(--verde); }
+
+    .nav-logo span {
+      color: var(--verde);
+    }
+
     .nav-links {
       display: flex;
       gap: 32px;
       list-style: none;
       align-items: center;
     }
+
     .nav-links a {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.65);
+      color: rgba(255, 255, 255, .65);
       text-decoration: none;
       transition: color var(--transition);
     }
-    .nav-links a:hover { color: var(--blanco); }
+
+    .nav-links a:hover {
+      color: var(--blanco);
+    }
+
     .nav-cta {
       background: var(--verde);
       color: var(--blanco) !important;
@@ -102,7 +141,11 @@
       border-radius: var(--radius);
       transition: background var(--transition) !important;
     }
-    .nav-cta:hover { background: var(--verde-oscuro) !important; color: var(--blanco) !important; }
+
+    .nav-cta:hover {
+      background: var(--verde-oscuro) !important;
+      color: var(--blanco) !important;
+    }
 
     /* Hamburger */
     .hamburger {
@@ -114,6 +157,7 @@
       border: none;
       padding: 4px;
     }
+
     .hamburger span {
       display: block;
       width: 24px;
@@ -122,11 +166,14 @@
       border-radius: 2px;
       transition: var(--transition);
     }
+
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
       background: var(--negro);
       z-index: 999;
       flex-direction: column;
@@ -134,7 +181,11 @@
       justify-content: center;
       gap: 40px;
     }
-    .mobile-menu.open { display: flex; }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
     .mobile-menu a {
       font-size: 20px;
       font-weight: 800;
@@ -144,10 +195,15 @@
       text-decoration: none;
       transition: color var(--transition);
     }
-    .mobile-menu a:hover { color: var(--verde); }
+
+    .mobile-menu a:hover {
+      color: var(--verde);
+    }
+
     .mobile-close {
       position: absolute;
-      top: 28px; right: 32px;
+      top: 28px;
+      right: 32px;
       background: none;
       border: none;
       color: var(--blanco);
@@ -164,6 +220,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero-bg-circle {
       position: absolute;
       border-radius: 50%;
@@ -171,33 +228,61 @@
       opacity: .06;
       pointer-events: none;
     }
-    .hero-bg-circle.c1 { width: 700px; height: 700px; top: -200px; right: -200px; }
-    .hero-bg-circle.c2 { width: 400px; height: 400px; bottom: -150px; left: -100px; border-width: 60px; }
+
+    .hero-bg-circle.c1 {
+      width: 700px;
+      height: 700px;
+      top: -200px;
+      right: -200px;
+    }
+
+    .hero-bg-circle.c2 {
+      width: 400px;
+      height: 400px;
+      bottom: -150px;
+      left: -100px;
+      border-width: 60px;
+    }
+
     .hero-inner {
       position: relative;
       z-index: 1;
       padding: 140px 0 100px;
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(45,138,46,.15);
-      border: 1px solid rgba(45,138,46,.3);
+      background: rgba(45, 138, 46, .15);
+      border: 1px solid rgba(45, 138, 46, .3);
       border-radius: 100px;
       padding: 8px 20px;
       margin-bottom: 32px;
     }
+
     .hero-badge-dot {
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       background: var(--verde);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .6; transform: scale(1.3); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .6;
+        transform: scale(1.3);
+      }
     }
+
     .hero-badge span {
       font-size: 11px;
       font-weight: 700;
@@ -205,6 +290,7 @@
       text-transform: uppercase;
       color: var(--verde);
     }
+
     .hero-h1 {
       font-size: clamp(44px, 6vw, 84px);
       font-weight: 900;
@@ -213,24 +299,28 @@
       margin-bottom: 28px;
       max-width: 760px;
     }
+
     .hero-h1 em {
       font-style: normal;
       color: var(--verde);
     }
+
     .hero-sub {
       font-size: 18px;
       font-weight: 400;
-      color: rgba(255,255,255,.5);
+      color: rgba(255, 255, 255, .5);
       max-width: 520px;
       line-height: 1.75;
       margin-bottom: 48px;
     }
+
     .hero-actions {
       display: flex;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .btn-primary {
       background: var(--verde);
       color: var(--blanco);
@@ -244,28 +334,39 @@
       transition: background var(--transition), transform var(--transition);
       display: inline-block;
     }
-    .btn-primary:hover { background: var(--verde-oscuro); transform: translateY(-2px); }
+
+    .btn-primary:hover {
+      background: var(--verde-oscuro);
+      transform: translateY(-2px);
+    }
+
     .btn-ghost {
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       text-decoration: none;
       padding: 18px 0;
-      border-bottom: 2px solid rgba(255,255,255,.2);
+      border-bottom: 2px solid rgba(255, 255, 255, .2);
       transition: color var(--transition), border-color var(--transition);
       display: inline-block;
     }
-    .btn-ghost:hover { color: var(--blanco); border-color: var(--blanco); }
+
+    .btn-ghost:hover {
+      color: var(--blanco);
+      border-color: var(--blanco);
+    }
+
     .hero-stats {
       display: flex;
       gap: 48px;
       margin-top: 80px;
       padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,.08);
+      border-top: 1px solid rgba(255, 255, 255, .08);
       flex-wrap: wrap;
     }
+
     .hero-stat strong {
       display: block;
       font-size: 40px;
@@ -273,36 +374,46 @@
       color: var(--blanco);
       line-height: 1;
     }
-    .hero-stat strong span { color: var(--verde); }
+
+    .hero-stat strong span {
+      color: var(--verde);
+    }
+
     .hero-stat p {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.3);
+      color: rgba(255, 255, 255, .3);
       margin-top: 6px;
     }
 
     /* ─── SOBRE ─── */
-    #sobre { background: var(--blanco); }
+    #sobre {
+      background: var(--blanco);
+    }
+
     .sobre-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
     }
+
     .sobre-content h2 {
       font-size: clamp(32px, 3.5vw, 48px);
       font-weight: 900;
       line-height: 1.1;
       margin-bottom: 24px;
     }
+
     .sobre-content p {
       font-size: 16px;
       color: var(--gris-oscuro);
       line-height: 1.85;
       margin-bottom: 20px;
     }
+
     .sobre-visual {
       background: var(--negro);
       border-radius: 8px;
@@ -310,15 +421,19 @@
       position: relative;
       overflow: hidden;
     }
+
     .sobre-visual::before {
       content: '';
       position: absolute;
-      bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
+      bottom: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       border: 50px solid var(--verde);
       opacity: .1;
     }
+
     .sobre-puntos {
       list-style: none;
       display: flex;
@@ -327,22 +442,34 @@
       position: relative;
       z-index: 1;
     }
+
     .sobre-puntos li {
       display: flex;
       align-items: flex-start;
       gap: 16px;
     }
+
     .sobre-icon {
       width: 40px;
       height: 40px;
-      background: rgba(45,138,46,.15);
+      background: rgba(45, 138, 46, .15);
       border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
-    .sobre-icon svg { width: 20px; height: 20px; stroke: var(--verde); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .sobre-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--verde);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
     .sobre-puntos li strong {
       display: block;
       font-size: 14px;
@@ -350,14 +477,18 @@
       color: var(--blanco);
       margin-bottom: 4px;
     }
+
     .sobre-puntos li p {
       font-size: 13px;
-      color: rgba(255,255,255,.45);
+      color: rgba(255, 255, 255, .45);
       margin: 0;
     }
 
     /* ─── PRÓXIMO EVENTO ─── */
-    #evento { background: var(--gris-claro); }
+    #evento {
+      background: var(--gris-claro);
+    }
+
     .evento-header {
       display: flex;
       justify-content: space-between;
@@ -366,11 +497,13 @@
       flex-wrap: wrap;
       gap: 24px;
     }
+
     .evento-header h2 {
       font-size: clamp(32px, 3.5vw, 48px);
       font-weight: 900;
       line-height: 1.1;
     }
+
     .evento-card {
       background: var(--negro);
       border-radius: 8px;
@@ -378,17 +511,22 @@
       display: grid;
       grid-template-columns: 1fr 340px;
     }
-    .evento-main { padding: 56px; }
+
+    .evento-main {
+      padding: 56px;
+    }
+
     .evento-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(45,138,46,.15);
-      border: 1px solid rgba(45,138,46,.3);
+      background: rgba(45, 138, 46, .15);
+      border: 1px solid rgba(45, 138, 46, .3);
       border-radius: 100px;
       padding: 6px 16px;
       margin-bottom: 28px;
     }
+
     .evento-tag span {
       font-size: 10px;
       font-weight: 700;
@@ -396,6 +534,7 @@
       text-transform: uppercase;
       color: var(--verde);
     }
+
     .evento-main h3 {
       font-size: 32px;
       font-weight: 900;
@@ -403,29 +542,44 @@
       line-height: 1.15;
       margin-bottom: 20px;
     }
+
     .evento-main p {
       font-size: 15px;
-      color: rgba(255,255,255,.5);
+      color: rgba(255, 255, 255, .5);
       line-height: 1.8;
       margin-bottom: 36px;
     }
+
     .evento-detalles {
       display: flex;
       gap: 28px;
       flex-wrap: wrap;
       margin-bottom: 40px;
     }
+
     .evento-detalle {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .evento-detalle svg { width: 18px; height: 18px; stroke: var(--verde); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+    .evento-detalle svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--verde);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
     .evento-detalle span {
       font-size: 13px;
       font-weight: 600;
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
     }
+
     .evento-sidebar {
       background: var(--verde);
       padding: 48px 36px;
@@ -433,49 +587,56 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
     .evento-sidebar h4 {
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.65);
+      color: rgba(255, 255, 255, .65);
       margin-bottom: 16px;
     }
+
     .evento-fecha-num {
       font-size: 72px;
       font-weight: 900;
       color: var(--blanco);
       line-height: 1;
     }
+
     .evento-fecha-mes {
       font-size: 20px;
       font-weight: 700;
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-top: 4px;
       margin-bottom: 48px;
     }
+
     .evento-cupos {
-      background: rgba(255,255,255,.1);
+      background: rgba(255, 255, 255, .1);
       border-radius: var(--radius);
       padding: 20px;
       margin-bottom: 24px;
     }
+
     .evento-cupos span {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.65);
+      color: rgba(255, 255, 255, .65);
       display: block;
       margin-bottom: 8px;
     }
+
     .evento-cupos strong {
       font-size: 24px;
       font-weight: 900;
       color: var(--blanco);
     }
+
     .btn-primary-dark {
       background: var(--blanco);
       color: var(--verde-oscuro);
@@ -490,36 +651,51 @@
       display: block;
       transition: opacity var(--transition), transform var(--transition);
     }
-    .btn-primary-dark:hover { opacity: .9; transform: translateY(-2px); }
+
+    .btn-primary-dark:hover {
+      opacity: .9;
+      transform: translateY(-2px);
+    }
 
     /* ─── BENEFICIOS ─── */
-    #beneficios { background: var(--blanco); }
+    #beneficios {
+      background: var(--blanco);
+    }
+
     .beneficios-header {
       text-align: center;
       max-width: 600px;
       margin: 0 auto 64px;
     }
+
     .beneficios-header h2 {
       font-size: clamp(32px, 3.5vw, 48px);
       font-weight: 900;
       line-height: 1.1;
     }
+
     .beneficios-header p {
       margin-top: 20px;
       font-size: 16px;
       color: var(--gris-medio);
     }
+
     .beneficios-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
     }
+
     .beneficio {
       background: var(--gris-claro);
       padding: 40px 36px;
       transition: background var(--transition);
     }
-    .beneficio:hover { background: var(--verde-claro); }
+
+    .beneficio:hover {
+      background: var(--verde-claro);
+    }
+
     .beneficio-num {
       font-size: 11px;
       font-weight: 700;
@@ -528,21 +704,48 @@
       margin-bottom: 24px;
       display: block;
     }
+
     .beneficio-icon {
-      width: 52px; height: 52px;
+      width: 52px;
+      height: 52px;
       background: var(--blanco);
       border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 24px;
+      margin: 0 auto 24px;
     }
-    .beneficio-icon svg { width: 24px; height: 24px; stroke: var(--verde); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .beneficio-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--verde);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .beneficio-icon svg.icon-red {
+      width: 32px;
+      height: 32px;
+      stroke: none;
+      fill: var(--verde);
+    }
+
+    .beneficio-icon img.icon-red {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(30%) sepia(85%) saturate(1500%) hue-rotate(95deg);
+    }
+
     .beneficio h3 {
       font-size: 18px;
       font-weight: 800;
       margin-bottom: 12px;
     }
+
     .beneficio p {
       font-size: 14px;
       color: var(--gris-medio);
@@ -550,16 +753,21 @@
     }
 
     /* ─── FUNDADOR ─── */
-    #fundador { background: var(--negro); }
+    #fundador {
+      background: var(--negro);
+    }
+
     .fundador-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
     }
+
     .fundador-img-wrap {
       position: relative;
     }
+
     .fundador-img-placeholder {
       width: 100%;
       aspect-ratio: 4/5;
@@ -570,6 +778,7 @@
       justify-content: center;
       overflow: hidden;
     }
+
     .fundador-img-placeholder svg {
       width: 80px;
       height: 80px;
@@ -577,18 +786,22 @@
       fill: none;
       stroke-width: 1;
     }
+
     .fundador-img-placeholder img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .fundador-badge-wrap {
       position: absolute;
-      bottom: -24px; right: -24px;
+      bottom: -24px;
+      right: -24px;
       background: var(--verde);
       border-radius: 8px;
       padding: 24px 28px;
     }
+
     .fundador-badge-wrap strong {
       display: block;
       font-size: 32px;
@@ -596,14 +809,19 @@
       color: var(--blanco);
       line-height: 1;
     }
+
     .fundador-badge-wrap span {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
     }
-    .fundador-content .label { color: var(--verde); }
+
+    .fundador-content .label {
+      color: var(--verde);
+    }
+
     .fundador-content h2 {
       font-size: clamp(32px, 3vw, 44px);
       font-weight: 900;
@@ -611,119 +829,210 @@
       line-height: 1.1;
       margin-bottom: 8px;
     }
-    .fundador-content .divider { background: var(--verde); }
+
+    .fundador-content .divider {
+      background: var(--verde);
+    }
+
     .fundador-content p {
       font-size: 15px;
-      color: rgba(255,255,255,.55);
+      color: rgba(255, 255, 255, .55);
       line-height: 1.85;
       margin-bottom: 20px;
     }
+
     .fundador-credentials {
       display: flex;
       flex-direction: column;
       gap: 16px;
       margin-top: 36px;
     }
+
     .credential {
       display: flex;
       align-items: center;
       gap: 16px;
     }
+
     .credential-dot {
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       background: var(--verde);
       border-radius: 50%;
       flex-shrink: 0;
     }
+
     .credential span {
       font-size: 14px;
       font-weight: 600;
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
     }
 
-    /* ─── GALERÍA ─── */
-    #galeria { background: var(--gris-claro); }
-    .galeria-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-      gap: 24px;
+    /* ─── GALERIA ─── */
+    #galeria {
+      background: var(--gris-claro);
     }
+
+    .galeria-header {
+      margin-bottom: 36px;
+    }
+
     .galeria-header h2 {
       font-size: clamp(32px, 3.5vw, 48px);
       font-weight: 900;
       line-height: 1.1;
     }
-    .galeria-grid {
+
+    .galeria-featured {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto auto;
-      gap: 8px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
     }
-    .galeria-item {
-      background: var(--gris-medio);
+
+    .galeria-featured-item,
+    .carousel-slide {
+      position: relative;
       border-radius: var(--radius);
       overflow: hidden;
       aspect-ratio: 1;
-      position: relative;
+      background: #1f1f1f;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
     }
-    .galeria-item.featured {
-      grid-column: span 2;
-      grid-row: span 2;
-      aspect-ratio: auto;
-    }
-    .galeria-placeholder {
+
+    .galeria-media {
       width: 100%;
       height: 100%;
-      min-height: 200px;
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 24px;
-      text-align: center;
-    }
-    .galeria-item.featured .galeria-placeholder { min-height: 416px; }
-    .galeria-placeholder svg { width: 32px; height: 32px; stroke: #444; fill: none; stroke-width: 1.5; }
-    .galeria-placeholder span {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      color: #666;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #444;
+      text-align: center;
+      padding: 20px;
     }
+
+    .galeria-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .galeria-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 50%);
       display: flex;
       align-items: flex-end;
-      padding: 20px;
+      padding: 16px;
+      background: linear-gradient(to top, rgba(0, 0, 0, .72) 0%, transparent 58%);
       opacity: 0;
       transition: opacity var(--transition);
+      pointer-events: none;
     }
-    .galeria-item:hover .galeria-overlay { opacity: 1; }
+
+    .galeria-featured-item:hover .galeria-overlay,
+    .carousel-slide:hover .galeria-overlay {
+      opacity: 1;
+    }
+
     .galeria-overlay span {
       font-size: 12px;
+      color: #fff;
       font-weight: 700;
-      color: var(--blanco);
-      letter-spacing: 1px;
     }
+
+    .galeria-carousel {
+      margin-top: 18px;
+    }
+
+    .carousel-container {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 10px;
+      transition: transform .35s ease;
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      flex: 0 0 calc((100% - 30px) / 4);
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--verde);
+      background: #fff;
+      color: var(--verde);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .carousel-btn:hover {
+      background: var(--verde);
+      color: #fff;
+    }
+
+    .carousel-btn svg {
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 0;
+      background: #b8b8b8;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--verde);
+    }
+
     .galeria-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      margin-top: 8px;
+      margin-top: 44px;
     }
+
     .galeria-stat {
       background: var(--negro);
       padding: 32px;
       text-align: center;
     }
+
     .galeria-stat strong {
       display: block;
       font-size: 36px;
@@ -731,54 +1040,166 @@
       color: var(--verde);
       line-height: 1;
     }
+
     .galeria-stat p {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.35);
+      color: rgba(255, 255, 255, .35);
       margin-top: 8px;
     }
 
+    /* ─── LIGHTBOX ─── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, .94);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+
+    .lightbox-content img {
+      width: auto;
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .5);
+    }
+
+    .lightbox-placeholder {
+      min-width: 320px;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      color: #8d8d8d;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 10px;
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, .35);
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 20px;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .lightbox-nav svg {
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-next {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, .7);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
     /* ─── TESTIMONIOS ─── */
-    #testimonios { background: var(--blanco); }
+    #testimonios {
+      background: var(--blanco);
+    }
+
     .testimonios-header {
       text-align: center;
       max-width: 600px;
       margin: 0 auto 64px;
     }
+
     .testimonios-header h2 {
       font-size: clamp(32px, 3.5vw, 48px);
       font-weight: 900;
       line-height: 1.1;
     }
+
     .testimonios-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .testimonio {
       border: 1px solid #F0F0F0;
       border-radius: 8px;
       padding: 36px;
       position: relative;
     }
+
     .testimonio::before {
       content: '"';
       position: absolute;
-      top: 20px; right: 28px;
+      top: 20px;
+      right: 28px;
       font-size: 80px;
       font-weight: 900;
       color: var(--verde-claro);
       line-height: 1;
       font-family: Georgia, serif;
     }
+
     .testimonio-stars {
       display: flex;
       gap: 4px;
       margin-bottom: 20px;
     }
-    .star { width: 14px; height: 14px; fill: var(--verde); }
+
+    .star {
+      width: 14px;
+      height: 14px;
+      fill: var(--verde);
+    }
+
     .testimonio p {
       font-size: 15px;
       color: var(--gris-oscuro);
@@ -786,13 +1207,16 @@
       margin-bottom: 28px;
       font-style: italic;
     }
+
     .testimonio-autor {
       display: flex;
       align-items: center;
       gap: 14px;
     }
+
     .autor-avatar {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: var(--verde-claro);
       display: flex;
@@ -803,11 +1227,13 @@
       color: var(--verde);
       flex-shrink: 0;
     }
+
     .autor-info strong {
       display: block;
       font-size: 14px;
       font-weight: 700;
     }
+
     .autor-info span {
       font-size: 12px;
       color: var(--gris-medio);
@@ -819,15 +1245,19 @@
       position: relative;
       overflow: hidden;
     }
+
     #cta::before {
       content: '';
       position: absolute;
-      top: -150px; right: -150px;
-      width: 500px; height: 500px;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
       border: 80px solid var(--verde);
       opacity: .07;
     }
+
     .cta-inner {
       text-align: center;
       position: relative;
@@ -835,7 +1265,11 @@
       max-width: 700px;
       margin: 0 auto;
     }
-    .cta-inner .label { color: var(--verde); }
+
+    .cta-inner .label {
+      color: var(--verde);
+    }
+
     .cta-inner h2 {
       font-size: clamp(36px, 4.5vw, 60px);
       font-weight: 900;
@@ -843,13 +1277,19 @@
       line-height: 1.05;
       margin-bottom: 20px;
     }
-    .cta-inner h2 em { font-style: normal; color: var(--verde); }
+
+    .cta-inner h2 em {
+      font-style: normal;
+      color: var(--verde);
+    }
+
     .cta-inner p {
       font-size: 17px;
-      color: rgba(255,255,255,.5);
+      color: rgba(255, 255, 255, .5);
       line-height: 1.75;
       margin-bottom: 48px;
     }
+
     .cta-actions {
       display: flex;
       justify-content: center;
@@ -857,52 +1297,63 @@
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .btn-outline {
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       text-decoration: none;
       padding: 18px 32px;
-      border: 1px solid rgba(255,255,255,.2);
+      border: 1px solid rgba(255, 255, 255, .2);
       border-radius: var(--radius);
       transition: border-color var(--transition), color var(--transition);
     }
-    .btn-outline:hover { border-color: var(--blanco); color: var(--blanco); }
+
+    .btn-outline:hover {
+      border-color: var(--blanco);
+      color: var(--blanco);
+    }
 
     /* ─── FOOTER ─── */
     footer {
       background: #111;
       padding: 64px 0 32px;
     }
+
     .footer-top {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 48px;
       padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
       margin-bottom: 40px;
     }
+
     .footer-brand .nav-logo {
       font-size: 14px;
       display: inline-block;
       margin-bottom: 20px;
     }
+
     .footer-brand p {
       font-size: 14px;
-      color: rgba(255,255,255,.35);
+      color: rgba(255, 255, 255, .35);
       line-height: 1.75;
       max-width: 260px;
     }
+
     .footer-social {
       display: flex;
       gap: 12px;
       margin-top: 24px;
     }
+
     .social-link {
-      width: 36px; height: 36px;
-      background: rgba(255,255,255,.06);
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, .06);
       border-radius: var(--radius);
       display: flex;
       align-items: center;
@@ -910,25 +1361,45 @@
       text-decoration: none;
       transition: background var(--transition);
     }
-    .social-link:hover { background: var(--verde); }
-    .social-link svg { width: 16px; height: 16px; fill: rgba(255,255,255,.6); }
+
+    .social-link:hover {
+      background: var(--verde);
+    }
+
+    .social-link svg {
+      width: 16px;
+      height: 16px;
+      fill: rgba(255, 255, 255, .6);
+    }
+
     .footer-col h5 {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.35);
+      color: rgba(255, 255, 255, .35);
       margin-bottom: 20px;
     }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .footer-col ul a {
       font-size: 14px;
       font-weight: 500;
-      color: rgba(255,255,255,.5);
+      color: rgba(255, 255, 255, .5);
       text-decoration: none;
       transition: color var(--transition);
     }
-    .footer-col ul a:hover { color: var(--blanco); }
+
+    .footer-col ul a:hover {
+      color: var(--blanco);
+    }
+
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -936,14 +1407,17 @@
       flex-wrap: wrap;
       gap: 16px;
     }
+
     .footer-bottom p {
       font-size: 12px;
-      color: rgba(255,255,255,.25);
+      color: rgba(255, 255, 255, .25);
     }
+
     .footer-bottom span {
       font-size: 12px;
-      color: rgba(255,255,255,.25);
+      color: rgba(255, 255, 255, .25);
     }
+
     .footer-bottom span a {
       color: var(--verde);
       text-decoration: none;
@@ -952,8 +1426,10 @@
     /* ─── SCROLL TOP ─── */
     .scroll-top {
       position: fixed;
-      bottom: 32px; right: 32px;
-      width: 44px; height: 44px;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
       background: var(--verde);
       border: none;
       border-radius: var(--radius);
@@ -966,575 +1442,998 @@
       transition: opacity var(--transition), transform var(--transition);
       z-index: 100;
     }
-    .scroll-top.visible { opacity: 1; transform: translateY(0); }
-    .scroll-top svg { width: 20px; height: 20px; stroke: var(--blanco); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--blanco);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      .beneficios-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .galeria-featured {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .carousel-slide {
+        flex: 0 0 calc((100% - 10px) / 2);
+      }
     }
 
     @media (max-width: 768px) {
-      .section { padding: 72px 0; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+      .section {
+        padding: 72px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
       .sobre-grid,
-      .fundador-inner { grid-template-columns: 1fr; gap: 48px; }
-      .fundador-img-wrap { max-width: 400px; }
-      .fundador-badge-wrap { right: 0; }
-      .evento-card { grid-template-columns: 1fr; }
-      .beneficios-grid { grid-template-columns: 1fr; }
-      .testimonios-grid { grid-template-columns: 1fr; }
-      .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-      .galeria-item.featured { grid-column: span 2; }
-      .galeria-stats { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; }
-      .hero-stats { gap: 32px; }
-      .cta-actions { flex-direction: column; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+      .fundador-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .fundador-img-wrap {
+        max-width: 400px;
+      }
+
+      .fundador-badge-wrap {
+        right: 0;
+      }
+
+      .evento-card {
+        grid-template-columns: 1fr;
+      }
+
+      .beneficios-grid,
+      .testimonios-grid,
+      .footer-top,
+      .galeria-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .carousel-container {
+        grid-template-columns: 1fr;
+      }
+
+      .carousel-btn {
+        display: none;
+      }
+
+      .carousel-slide {
+        flex: 0 0 100%;
+      }
+
+      .hero-stats {
+        gap: 32px;
+      }
+
+      .cta-actions,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        text-align: center;
+      }
+
+      .lightbox-nav {
+        width: 36px;
+        height: 36px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
     }
 
     @media (max-width: 480px) {
-      .container { padding: 0 20px; }
-      .galeria-grid { grid-template-columns: 1fr; }
-      .galeria-item.featured { grid-column: span 1; }
+      .container {
+        padding: 0 20px;
+      }
+
+      .galeria-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-placeholder {
+        min-width: 260px;
+        min-height: 180px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ─── NAVEGACIÓN ─── -->
-<nav id="navbar">
-  <div class="container nav-inner">
-    <a href="#hero" class="nav-logo">NOW <span>Conexión</span></a>
-    <ul class="nav-links">
-      <li><a href="#sobre">Quiénes somos</a></li>
-      <li><a href="#evento">Próximo evento</a></li>
-      <li><a href="#beneficios">Beneficios</a></li>
-      <li><a href="#galeria">Encuentros</a></li>
-      <li><a href="#fundador">Fundador</a></li>
-      <li><a href="#cta" class="nav-cta">Únete</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <!-- ─── NAVEGACIÓN ─── -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">Now<span>Conexion</span></a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Quiénes somos</a></li>
+        <li><a href="#evento">Próximo evento</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#galeria">Encuentros</a></li>
+        <li><a href="#fundador">Fundador</a></li>
+        <li><a href="#cta" class="nav-cta">Únete</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar">&times;</button>
+    <a href="#sobre" class="mobile-link">Quiénes somos</a>
+    <a href="#evento" class="mobile-link">Próximo evento</a>
+    <a href="#beneficios" class="mobile-link">Beneficios</a>
+    <a href="#galeria" class="mobile-link">Encuentros</a>
+    <a href="#fundador" class="mobile-link">Fundador</a>
+    <a href="#cta" class="mobile-link">Únete</a>
   </div>
-</nav>
 
-<!-- Menú móvil -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose" aria-label="Cerrar">&times;</button>
-  <a href="#sobre" class="mobile-link">Quiénes somos</a>
-  <a href="#evento" class="mobile-link">Próximo evento</a>
-  <a href="#beneficios" class="mobile-link">Beneficios</a>
-  <a href="#galeria" class="mobile-link">Encuentros</a>
-  <a href="#fundador" class="mobile-link">Fundador</a>
-  <a href="#cta" class="mobile-link">Únete</a>
-</div>
-
-<!-- ─── HERO ─── -->
-<section id="hero">
-  <div class="hero-bg-circle c1"></div>
-  <div class="hero-bg-circle c2"></div>
-  <div class="container hero-inner">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      <span>Curicó, Región del Maule</span>
-    </div>
-    <h1 class="hero-h1">
-      Networking que<br>
-      <em>transforma</em><br>
-      negocios.
-    </h1>
-    <p class="hero-sub">
-      La red empresarial más activa del Maule. Conectamos empresarios y emprendedores de alto nivel en encuentros que generan alianzas reales.
-    </p>
-    <div class="hero-actions">
-      <a href="#cta" class="btn-primary">Quiero participar</a>
-      <a href="#sobre" class="btn-ghost">Conocer más</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <strong>100<span>+</span></strong>
-        <p>Personas conectadas</p>
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg-circle c1"></div>
+    <div class="hero-bg-circle c2"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Región del Maule</span>
       </div>
-      <div class="hero-stat">
-        <strong>50<span>+</span></strong>
-        <p>Emprendedores por edición</p>
-      </div>
-      <div class="hero-stat">
-        <strong>2024</strong>
-        <p>Fundado en Curicó</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SOBRE NOSOTROS ─── -->
-<section id="sobre" class="section">
-  <div class="container">
-    <div class="sobre-grid">
-      <div class="sobre-content">
-        <span class="label">Quiénes somos</span>
-        <h2>El ecosistema emprendedor del Maule tiene un nuevo hogar.</h2>
-        <div class="divider"></div>
-        <p>
-          NOW Conexión nació en 2024 con una convicción simple: los mejores negocios se construyen sobre relaciones genuinas. Somos el punto de encuentro para empresarios y emprendedores del Maule que entienden que crecer juntos es más poderoso que crecer solos.
-        </p>
-        <p>
-          Cada encuentro reúne a tomadores de decisión, líderes de industria y emprendedores con visión. No es solo networking, es la construcción de un ecosistema empresarial sólido para la región.
-        </p>
-        <a href="#beneficios" class="btn-primary" style="margin-top: 12px;">Ver beneficios</a>
-      </div>
-      <div class="sobre-visual">
-        <ul class="sobre-puntos">
-          <li>
-            <div class="sobre-icon">
-              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div>
-              <strong>Red empresarial de alto nivel</strong>
-              <p>Acceso exclusivo a una comunidad de empresarios y emprendedores seleccionados.</p>
-            </div>
-          </li>
-          <li>
-            <div class="sobre-icon">
-              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <div>
-              <strong>Conferencistas de excelencia</strong>
-              <p>Alianzas con referentes como Javier Eskenazi, cofundador de Ampliando Círculos.</p>
-            </div>
-          </li>
-          <li>
-            <div class="sobre-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <strong>Encuentros periódicos</strong>
-              <p>Instancias regulares diseñadas para profundizar conexiones y generar oportunidades reales.</p>
-            </div>
-          </li>
-          <li>
-            <div class="sobre-icon">
-              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </div>
-            <div>
-              <strong>Expansión a Santiago</strong>
-              <p>Proyección de crecimiento para conectar el Maule con la capital del país.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PRÓXIMO EVENTO ─── -->
-<section id="evento" class="section">
-  <div class="container">
-    <div class="evento-header">
-      <div>
-        <span class="label">Agenda</span>
-        <h2>Próximo encuentro</h2>
-      </div>
-      <a href="#cta" class="btn-primary">Reservar mi lugar</a>
-    </div>
-    <div class="evento-card">
-      <div class="evento-main">
-        <div class="evento-tag">
-          <span>Próximamente</span>
-        </div>
-        <h3>NOW Conexión<br>Maule — Edición 2025</h3>
-        <p>
-          Un encuentro diseñado para empresarios y emprendedores que quieren expandir su red, explorar nuevas alianzas y escuchar a referentes que están transformando sus industrias. Networking de alto impacto en un ambiente exclusivo.
-        </p>
-        <div class="evento-detalles">
-          <div class="evento-detalle">
-            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>A confirmar — 2025</span>
-          </div>
-          <div class="evento-detalle">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>18:30 — 21:30 hrs</span>
-          </div>
-          <div class="evento-detalle">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Curicó, Región del Maule</span>
-          </div>
-        </div>
-        <a href="#cta" class="btn-primary">Reservar lugar</a>
-      </div>
-      <div class="evento-sidebar">
-        <div>
-          <h4>Próxima edición</h4>
-          <div class="evento-fecha-num">—</div>
-          <div class="evento-fecha-mes">Pronto</div>
-        </div>
-        <div>
-          <div class="evento-cupos">
-            <span>Cupos disponibles</span>
-            <strong>~50</strong>
-          </div>
-          <a href="#cta" class="btn-primary-dark">Asegurar mi cupo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── BENEFICIOS ─── -->
-<section id="beneficios" class="section">
-  <div class="container">
-    <div class="beneficios-header">
-      <span class="label">Por qué unirte</span>
-      <h2>Lo que obtienes al ser parte de NOW</h2>
-      <p>Más que eventos, una comunidad que potencia tu negocio.</p>
-    </div>
-    <div class="beneficios-grid">
-      <div class="beneficio">
-        <span class="beneficio-num">01</span>
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Red empresarial exclusiva</h3>
-        <p>Acceso directo a empresarios y emprendedores cuidadosamente seleccionados del Maule y más allá.</p>
-      </div>
-      <div class="beneficio">
-        <span class="beneficio-num">02</span>
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <h3>Conferencistas de impacto</h3>
-        <p>Cada encuentro incluye a referentes que comparten conocimiento accionable para crecer tu empresa.</p>
-      </div>
-      <div class="beneficio">
-        <span class="beneficio-num">03</span>
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.55a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.61-1.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <h3>Oportunidades de negocio</h3>
-        <p>Conexiones que se traducen en contratos, alianzas estratégicas y nuevas líneas de negocio.</p>
-      </div>
-      <div class="beneficio">
-        <span class="beneficio-num">04</span>
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <h3>Aprendizaje continuo</h3>
-        <p>Talleres, charlas y contenido de valor que mantienen a los miembros al frente de sus industrias.</p>
-      </div>
-      <div class="beneficio">
-        <span class="beneficio-num">05</span>
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        </div>
-        <h3>Visibilidad regional</h3>
-        <p>Posiciona tu empresa frente a cientos de tomadores de decisión del ecosistema emprendedor del Maule.</p>
-      </div>
-      <div class="beneficio">
-        <span class="beneficio-num">06</span>
-        <div class="beneficio-icon">
-          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <h3>Crecimiento con proyección</h3>
-        <p>Sé parte de una red con expansión hacia Santiago, multiplicando el alcance de tus relaciones comerciales.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── FUNDADOR ─── -->
-<section id="fundador" class="section">
-  <div class="container">
-    <div class="fundador-inner">
-      <div class="fundador-img-wrap">
-        <div class="fundador-img-placeholder">
-          <!-- Reemplazar con foto real: <img src="marcelo.jpg" alt="Marcelo San Martín"> -->
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <div class="fundador-badge-wrap">
-          <strong>15+</strong>
-          <span>años de experiencia</span>
-        </div>
-      </div>
-      <div class="fundador-content">
-        <span class="label">Fundador</span>
-        <h2>Marcelo San Martín</h2>
-        <div class="divider"></div>
-        <p>
-          Empresario curicano con más de 15 años de trayectoria en el mundo del emprendimiento y los negocios. Marcelo conoce de primera mano los desafíos de construir empresa en regiones y creó NOW Conexión para cambiar eso.
-        </p>
-        <p>
-          Su visión es clara: el Maule tiene el talento y la energía. Solo necesitaba el espacio correcto para conectarse y crecer juntos. Desde diciembre de 2024, ese espacio existe.
-        </p>
-        <div class="fundador-credentials">
-          <div class="credential">
-            <div class="credential-dot"></div>
-            <span>Ingeniero Comercial — Universidad de Talca</span>
-          </div>
-          <div class="credential">
-            <div class="credential-dot"></div>
-            <span>MBA — Universidad de Chile</span>
-          </div>
-          <div class="credential">
-            <div class="credential-dot"></div>
-            <span>Empresario con más de 15 años de experiencia</span>
-          </div>
-          <div class="credential">
-            <div class="credential-dot"></div>
-            <span>Fundador de NOW Conexión (2024)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── GALERÍA ─── -->
-<section id="galeria" class="section">
-  <div class="container">
-    <div class="galeria-header">
-      <div>
-        <span class="label">Encuentros pasados</span>
-        <h2>Lo que vivimos juntos</h2>
-      </div>
-    </div>
-    <div class="galeria-grid">
-      <div class="galeria-item featured">
-        <div class="galeria-placeholder">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Primer encuentro — Diciembre 2024</span>
-        </div>
-        <div class="galeria-overlay"><span>Diciembre 2024 — Primer encuentro NOW Conexión</span></div>
-      </div>
-      <div class="galeria-item">
-        <div class="galeria-placeholder">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Networking</span>
-        </div>
-        <div class="galeria-overlay"><span>Networking en acción</span></div>
-      </div>
-      <div class="galeria-item">
-        <div class="galeria-placeholder">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Conferencia</span>
-        </div>
-        <div class="galeria-overlay"><span>Conferencista invitado</span></div>
-      </div>
-      <div class="galeria-item">
-        <div class="galeria-placeholder">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Comunidad</span>
-        </div>
-        <div class="galeria-overlay"><span>La comunidad NOW</span></div>
-      </div>
-    </div>
-    <div class="galeria-stats">
-      <div class="galeria-stat">
-        <strong>100+</strong>
-        <p>Personas conectadas desde diciembre 2024</p>
-      </div>
-      <div class="galeria-stat">
-        <strong>~50</strong>
-        <p>Emprendedores por edición</p>
-      </div>
-      <div class="galeria-stat">
-        <strong>Maule</strong>
-        <p>Curicó y proyección regional</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── TESTIMONIOS ─── -->
-<section id="testimonios" class="section">
-  <div class="container">
-    <div class="testimonios-header">
-      <span class="label">Lo que dicen</span>
-      <h2>Voces de nuestra comunidad</h2>
-    </div>
-    <div class="testimonios-grid">
-      <div class="testimonio">
-        <div class="testimonio-stars">
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>"En el primer encuentro cerré una alianza estratégica que nunca habría logrado de otra forma. NOW Conexión es exactamente lo que el Maule necesitaba."</p>
-        <div class="testimonio-autor">
-          <div class="autor-avatar">C</div>
-          <div class="autor-info">
-            <strong>Carlos M.</strong>
-            <span>Empresario — Curicó</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio">
-        <div class="testimonio-stars">
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>"La calidad de las personas que asisten es impresionante. No es un evento cualquiera, es una selección de los mejores emprendedores de la región."</p>
-        <div class="testimonio-autor">
-          <div class="autor-avatar">A</div>
-          <div class="autor-info">
-            <strong>Ana P.</strong>
-            <span>Emprendedora — Talca</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio">
-        <div class="testimonio-stars">
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p>"Marcelo logró crear un ambiente donde las conexiones ocurren naturalmente. Cada encuentro termina con nuevas oportunidades concretas."</p>
-        <div class="testimonio-autor">
-          <div class="autor-avatar">R</div>
-          <div class="autor-info">
-            <strong>Roberto L.</strong>
-            <span>Empresario — Maule</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CTA ─── -->
-<section id="cta" class="section">
-  <div class="container">
-    <div class="cta-inner">
-      <span class="label">Súmate</span>
-      <h2>Tu próximo gran<br>contacto te está<br><em>esperando.</em></h2>
-      <p>
-        Sé parte de la red empresarial que está cambiando el ecosistema del Maule. Cupos limitados por edición.
+      <h1 class="hero-h1">
+        Networking que<br>
+        <em>transforma</em><br>
+        negocios.
+      </h1>
+      <p class="hero-sub">
+        La red empresarial más activa del Maule. Conectamos empresarios y emprendedores de alto nivel en encuentros que
+        generan alianzas reales.
       </p>
-      <div class="cta-actions">
-        <a href="mailto:contacto@nowconexion.cl" class="btn-primary">Quiero participar</a>
-        <a href="https://www.instagram.com/nowconexion" target="_blank" rel="noopener" class="btn-outline">Seguirnos en Instagram</a>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">Quiero participar</a>
+        <a href="#sobre" class="btn-ghost">Conocer más</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo">NOW <span>Conexión</span></a>
-        <p>Red de networking empresarial del Maule. Conectando empresarios y emprendedores desde 2024.</p>
-        <div class="footer-social">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/nowconexion" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <!-- LinkedIn -->
-          <a href="#" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <!-- WhatsApp -->
-          <a href="#" class="social-link" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </a>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>200<span>+</span></strong>
+          <p>Personas conectadas</p>
+        </div>
+        <div class="hero-stat">
+          <strong>50<span>+</span></strong>
+          <p>Emprendedores por edición</p>
+        </div>
+        <div class="hero-stat">
+          <strong>2024</strong>
+          <p>Fundado en Curicó</p>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Navegación</h5>
-        <ul>
-          <li><a href="#sobre">Quiénes somos</a></li>
-          <li><a href="#evento">Próximo evento</a></li>
-          <li><a href="#beneficios">Beneficios</a></li>
-          <li><a href="#galeria">Encuentros</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Comunidad</h5>
-        <ul>
-          <li><a href="#fundador">El fundador</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#cta">Únete</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contacto</h5>
-        <ul>
-          <li><a href="mailto:contacto@nowconexion.cl">contacto@nowconexion.cl</a></li>
-          <li><a href="#">Curicó, Maule</a></li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- ─── SOBRE NOSOTROS ─── -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-content">
+          <span class="label">Quiénes somos</span>
+          <h2>El ecosistema emprendedor del Maule tiene un nuevo hogar</h2>
+          <div class="divider"></div>
+          <p>
+            NowConexion nació en 2024 con una convicción simple: los mejores negocios se construyen sobre relaciones
+            genuinas. Somos el punto de encuentro para empresarios y emprendedores del Maule que entienden que crecer
+            juntos es más poderoso que crecer solos.
+          </p>
+          <p>
+            Cada encuentro reúne a tomadores de decisión, líderes de industria y emprendedores con visión. No es solo
+            networking, es la construcción de un ecosistema empresarial sólido para la región.
+          </p>
+          <a href="#beneficios" class="btn-primary" style="margin-top: 12px;">Ver beneficios</a>
+        </div>
+        <div class="sobre-visual">
+          <ul class="sobre-puntos">
+            <li>
+              <div class="sobre-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <strong>Red empresarial de alto nivel</strong>
+                <p>Acceso exclusivo a una comunidad de empresarios y emprendedores seleccionados.</p>
+              </div>
+            </li>
+            <li>
+              <div class="sobre-icon">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div>
+                <strong>Conferencistas de excelencia</strong>
+                <p>Alianzas con referentes como Javier Eskenazi, cofundador de Ampliando Círculos.</p>
+              </div>
+            </li>
+            <li>
+              <div class="sobre-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div>
+                <strong>Encuentros periódicos</strong>
+                <p>Instancias regulares diseñadas para profundizar conexiones y generar oportunidades reales.</p>
+              </div>
+            </li>
+            <li>
+              <div class="sobre-icon">
+                <svg viewBox="0 0 24 24">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </div>
+              <div>
+                <strong>Expansión a Santiago</strong>
+                <p>Proyección de crecimiento para conectar el Maule con la capital del país.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 NOW Conexión. Todos los derechos reservados.</p>
-      <span>Networking empresarial — <a href="#">Región del Maule</a></span>
+  </section>
+
+  <!-- ─── PRÓXIMO EVENTO ─── -->
+  <section id="evento" class="section">
+    <div class="container">
+      <div class="evento-header">
+        <div>
+          <span class="label">Agenda</span>
+          <h2>Próximo encuentro</h2>
+        </div>
+        <a href="#cta" class="btn-primary">Reservar mi lugar</a>
+      </div>
+      <div class="evento-card">
+        <div class="evento-main">
+          <div class="evento-tag">
+            <span>Próximamente</span>
+          </div>
+          <h3>NowConexion<br>Maule — Edición 2026</h3>
+          <p>
+            Un encuentro diseñado para empresarios y emprendedores que quieren expandir su red, explorar nuevas alianzas
+            y escuchar a referentes que están transformando sus industrias. Networking de alto impacto en un ambiente
+            exclusivo.
+          </p>
+          <div class="evento-detalles">
+            <div class="evento-detalle">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              <span>8 de Abril — 2026</span>
+            </div>
+            <div class="evento-detalle">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>19:00 — 22:00 hrs</span>
+            </div>
+            <div class="evento-detalle">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Club Aéreo Aeródromo, Curicó</span>
+            </div>
+          </div>
+          <a href="#cta" class="btn-primary">Reservar lugar</a>
+        </div>
+        <div class="evento-sidebar">
+          <div>
+
+            <div class="evento-fecha-num">—</div>
+            <div class="evento-fecha-mes">¡No te pierdas el primer encuentro del año!</div>
+          </div>
+          <div>
+            <div class="evento-cupos">
+              <span>Cupos disponibles</span>
+              <strong>~50</strong>
+            </div>
+            <a href="#cta" class="btn-primary-dark">Asegurar mi cupo</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- ─── BENEFICIOS ─── -->
+  <section id="beneficios" class="section">
+    <div class="container">
+      <div class="beneficios-header">
+        <span class="label">Por qué unirte</span>
+        <h2>Lo que obtienes al ser parte de NowConexion</h2>
+        <p>Más que eventos, una comunidad que potencia tu negocio.</p>
+      </div>
+      <div class="beneficios-grid">
+        <div class="beneficio">
+          <span class="beneficio-num">01</span>
+          <div class="beneficio-icon">
+            <img src="conexion.svg" alt="Red empresarial" class="icon-red" />
+          </div>
+          <h3>Red empresarial exclusiva</h3>
+          <p>Acceso directo a empresarios y emprendedores cuidadosamente seleccionados del Maule y más allá.</p>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-num">02</span>
+          <div class="beneficio-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg>
+          </div>
+          <h3>Conferencistas de impacto</h3>
+          <p>Cada encuentro incluye a referentes que comparten conocimiento accionable para crecer tu empresa.</p>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-num">03</span>
+          <div class="beneficio-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+              <path
+                d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+              <path d="m21 3 1 11h-2" />
+              <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+              <path d="M3 4h8" />
+            </svg>
+          </div>
+          <h3>Oportunidades de negocio</h3>
+          <p>Conexiones que se traducen en contratos, alianzas estratégicas y nuevas líneas de negocio.</p>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-num">04</span>
+          <div class="beneficio-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+          </div>
+          <h3>Aprendizaje continuo</h3>
+          <p>Talleres, charlas y contenido de valor que mantienen a los miembros al frente de sus industrias.</p>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-num">05</span>
+          <div class="beneficio-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h3>Visibilidad regional</h3>
+          <p>Posiciona tu empresa frente a cientos de tomadores de decisión del ecosistema emprendedor del Maule.</p>
+        </div>
+        <div class="beneficio">
+          <span class="beneficio-num">06</span>
+          <div class="beneficio-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+          </div>
+          <h3>Crecimiento con proyección</h3>
+          <p>Sé parte de una red con expansión hacia Santiago, multiplicando el alcance de tus relaciones comerciales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FUNDADOR ─── -->
+  <section id="fundador" class="section">
+    <div class="container">
+      <div class="fundador-inner">
+        <div class="fundador-img-wrap">
+          <div class="fundador-img-placeholder">
+            <!-- Reemplazar con foto real: <img src="marcelo.jpg" alt="Marcelo San Martín"> -->
+            <img src="https://lh3.googleusercontent.com/u/0/d/1hRQVV5XGVmzgKfQDB2tT6j_r-gihHWNR"
+              alt="Foto de Marcelo San Martín" class="fundador-img-placeholder" />
+          </div>
+
+
+          <div class="fundador-badge-wrap">
+            <strong>15+</strong>
+            <span>años de experiencia</span>
+          </div>
+        </div>
+        <div class="fundador-content">
+          <span class="label">Fundador</span>
+          <h2>Marcelo San Martín H.</h2>
+          <div class="divider"></div>
+          <p>
+            Empresario curicano con más de 15 años de trayectoria en el mundo del emprendimiento y los negocios. Marcelo
+            conoce de primera mano los desafíos de construir empresa en regiones y creó NowConexion para cambiar eso.
+          </p>
+          <p>
+            Su visión es clara: el Maule tiene el talento y la energía. Solo necesitaba el espacio correcto para
+            conectarse y crecer juntos. Desde diciembre de 2024, ese espacio existe.
+          </p>
+          <div class="fundador-credentials">
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <span>Ingeniero Comercial, Universidad de Talca</span>
+            </div>
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <span>MBA, Universidad de Chile</span>
+            </div>
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <span>Empresario con más de 15 años de experiencia</span>
+            </div>
+            <div class="credential">
+              <div class="credential-dot"></div>
+              <span>Fundador de NowConexion (2024)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALERÍA ─── -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <div class="galeria-header">
+        <div>
+          <span class="label">Encuentros pasados</span>
+          <h2>Lo que vivimos juntos</h2>
+        </div>
+      </div>
+      <div class="galeria-featured">
+        <button class="galeria-featured-item" type="button" data-gallery-item
+          data-caption="Diciembre 2024 — Primer encuentro NowConexion">
+          <div class="galeria-media">
+            <img src="https://lh3.googleusercontent.com/u/0/d/1QUatTXwERxFTMkaNAYvvfC59-PYeq-Gs"
+              alt="Foto del primer encuentro" class="galeria-img" />
+          </div>
+          <div class="galeria-overlay"><span>Diciembre 2024 — Primer encuentro NowConexion</span></div>
+        </button>
+        <button class="galeria-featured-item" type="button" data-gallery-item data-caption="Networking en accion">
+          <div class="galeria-media">
+            <img src="https://lh3.googleusercontent.com/u/0/d/1vZUmNL_LMiG8vZe30cBB-5WEY7VjChoN"
+              alt="Networking en accion" class="galeria-img" />
+          </div>
+          <div class="galeria-overlay"><span>Networking en accion</span></div>
+        </button>
+        <button class="galeria-featured-item" type="button" data-gallery-item data-caption="Conferencista invitado">
+          <div class="galeria-media"><img
+              src="https://lh3.googleusercontent.com/u/0/d/1xrmTA-ToGMW6oVzSaxa6xIILVcJhCJpz"
+              alt="Conferencista invitado" class="galeria-img" /></div>
+
+          <div class="galeria-overlay"><span>Conferencista invitado</span></div>
+
+        </button>
+        <button class="galeria-featured-item" type="button" data-gallery-item data-caption="La comunidad NOW">
+          <div class="galeria-media"><img
+              src="https://lh3.googleusercontent.com/u/0/d/1qgdKVzs8mUE0R_MIlLhbAYZMc2XXCyvf"
+              alt="Conferencista invitado" class="galeria-img" /></div>
+
+
+          <div class="galeria-overlay"><span>La comunidad </span></div>
+        </button>
+      </div>
+
+      <div class="galeria-carousel">
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-btn-prev" aria-label="Anterior" type="button">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn-next" aria-label="Siguiente" type="button">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+      <div class="galeria-stats">
+        <div class="galeria-stat">
+          <strong>200+</strong>
+          <p>Personas conectadas desde diciembre 2024</p>
+        </div>
+        <div class="galeria-stat">
+          <strong>~50</strong>
+          <p>Emprendedores por edición</p>
+        </div>
+        <div class="galeria-stat">
+          <strong>Maule</strong>
+          <p>Curicó y proyección regional</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIOS ─── -->
+  <section id="testimonios" class="section">
+    <div class="container">
+      <div class="testimonios-header">
+        <span class="label">Lo que dicen</span>
+        <h2>Voces de nuestra comunidad</h2>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio">
+          <div class="testimonio-stars">
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <p>"En el primer encuentro cerré una alianza estratégica que nunca habría logrado de otra forma. NowConexion
+            es exactamente lo que el Maule necesitaba."</p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">C</div>
+            <div class="autor-info">
+              <strong>Carlos M.</strong>
+              <span>Empresario — Curicó</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio">
+          <div class="testimonio-stars">
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <p>"La calidad de las personas que asisten es impresionante. No es un evento cualquiera, es una selección de
+            los mejores emprendedores de la región."</p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">A</div>
+            <div class="autor-info">
+              <strong>Ana P.</strong>
+              <span>Emprendedora — Talca</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio">
+          <div class="testimonio-stars">
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg class="star" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <p>"Marcelo logró crear un ambiente donde las conexiones ocurren naturalmente. Cada encuentro termina con
+            nuevas oportunidades concretas."</p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">R</div>
+            <div class="autor-info">
+              <strong>Roberto L.</strong>
+              <span>Empresario — Maule</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section id="cta" class="section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="label">Súmate</span>
+        <h2>Tu próximo gran<br>contacto te está<br><em>esperando.</em></h2>
+        <p>
+          Sé parte de la red empresarial que está cambiando el ecosistema del Maule. Cupos limitados por edición.
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:contacto@nowconexion.cl" class="btn-primary">Quiero participar</a>
+          <a href="https://www.instagram.com/nowconexion" target="_blank" rel="noopener" class="btn-outline">Síguenos
+            en Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">Now<span>Conexion</span></a>
+          <p>Red de networking empresarial del Maule. Conectando empresarios y emprendedores desde 2024.</p>
+          <div class="footer-social">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/nowconexion" target="_blank" rel="noopener" class="social-link"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/nowconexion/posts/?feedView=all" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#sobre">Quiénes somos</a></li>
+            <li><a href="#evento">Próximo evento</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#galeria">Encuentros</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Comunidad</h5>
+          <ul>
+            <li><a href="#fundador">El fundador</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#cta">Únete</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="mailto:contacto@nowconexion.cl">contacto@nowconexion.cl</a></li>
+            <li><a href="#">Curicó, Maule</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 NowConexion. Todos los derechos reservados.</p>
+        <span>Networking empresarial — <a href="#">Región del Maule</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón scroll arriba -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+    <button class="lightbox-nav lightbox-next" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
   </div>
-</footer>
 
-<!-- Botón scroll arriba -->
-<button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<!-- ─── SCRIPTS ─── -->
-<script>
-  // Navbar scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // Scroll top button
-  const scrollTopBtn = document.getElementById('scrollTop');
-  window.addEventListener('scroll', () => {
-    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-  });
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Mobile menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileClose = document.getElementById('mobileClose');
-
-  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  });
-
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+  <!-- ─── SCRIPTS ─── -->
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.beneficio, .testimonio, .sobre-puntos li, .credential').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-</script>
+    // Scroll top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.beneficio, .testimonio, .sobre-puntos li, .credential').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+
+    // ─── Galeria (destacadas + carrusel + lightbox) ───
+    // Pega aqui los links de las fotos del carrusel (Foto 5 a Foto 9)
+    const carouselData = [
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1o5Nc3OVskkVRJrAGFQiaHS4Xs_0V2mx6' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1cd8gHcxdvzV6XZh6rDOIrmsSMMWn8ZA6' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1iWiSoTlMuIDnxVIrvtiVXdXW77m5yP5k' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1VyVS-CATcGEOR0DAE2yRnXRcAULIWxGn' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1SsSFNyrKvoKUouhZpTeRBHxSMcz7rHoC' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1c8wsA4ldvaPPxuRcK3xP69vCfe56wWMT' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/14UHmaJtP7GoGbj1ALmLIq6qlU3PloPgZ' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1cAyOS5VuqTikqHWKHE5BN3SbYS87v_5Y' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1h5O07v7MXzJgvz0GesnC_IQQ37X2yaB4' },
+      { src: 'https://lh3.googleusercontent.com/u/0/d/14kLHTyOBZ8OOvD2EgBSmrZcznu4JbnJT'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/16hB5br2RJkXrU_fM98p2wHw2dOW7Fstw'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/18d03uS1HHAzxBtqpvBNL4BHu8xDrYMsz'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1gc-W06Xhj0j1-hESJ_OvRtodAfvfpyHc'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1HkJ1pGua4zsXMwRzhRm4iOH2XQuV9gUi'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1lDmL8Rdxv82rSF3ofm1ZOhPt9vt7wbAR'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/18BIp-DPSEvDcpsgF7j2s1rUtTRxj10kG'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1I6hKXyWWhXzJaGEFwWSQt9sybguAL4RP'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1baEtpDUKXaa3olwUkO5OS0r2itCPY4ng'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1KvsxpVlihuD8yHwqEZaab_Kg3TTvfqLG'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1At_iQQHjOHaJ9ffXuL6OzbXc-a75Y7_u'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1IoNnJHRnzyi2BsVASHmlpWnrOflpZZPn'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1I1iYTG3FIi6hgmiCExNj40Hldpf4Pc6i'},
+      { src: 'https://lh3.googleusercontent.com/u/0/d/1U5zkcr38YdHVX1dW2kkALTLNf87n-8ZA'}
+    ];
+
+    const carouselTrackNode = document.querySelector('.carousel-track');
+    if (carouselTrackNode && carouselTrackNode.children.length === 0) {
+      carouselData.forEach((item, index) => {
+        const slide = document.createElement('button');
+        slide.type = 'button';
+        slide.className = 'carousel-slide';
+        slide.setAttribute('data-gallery-item', '');
+        slide.dataset.caption = item.label;
+
+        const mediaHtml = item.src
+          ? `<img src="${item.src}" alt="Foto carrusel ${index + 5}" class="galeria-img">`
+          : item.label;
+
+        slide.innerHTML = `<div class="galeria-media">${mediaHtml}</div><div class="galeria-overlay"></div>`;
+        carouselTrackNode.appendChild(slide);
+      });
+    }
+
+    const galleryItems = Array.from(document.querySelectorAll('[data-gallery-item]'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+
+    let lightboxIndex = 0;
+
+    function renderLightbox(index) {
+      const item = galleryItems[index];
+      const img = item.querySelector('.galeria-img');
+      const caption = item.dataset.caption || 'Foto';
+
+      if (img && img.src) {
+        lightboxContent.innerHTML = `<img src="${img.src}" alt="${caption}">`;
+      } else {
+        lightboxContent.innerHTML = `<div class="lightbox-placeholder">${caption}</div>`;
+      }
+
+      lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
+    }
+
+    function openLightbox(index) {
+      lightboxIndex = index;
+      renderLightbox(lightboxIndex);
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function stepLightbox(step) {
+      lightboxIndex = (lightboxIndex + step + galleryItems.length) % galleryItems.length;
+      renderLightbox(lightboxIndex);
+    }
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => openLightbox(index));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepLightbox(-1);
+    });
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepLightbox(1);
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+      if (e.key === 'ArrowRight') stepLightbox(1);
+    });
+
+    // Carrusel por paginas (independiente del lightbox)
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselPrev = document.querySelector('.carousel-btn-prev');
+    const carouselNext = document.querySelector('.carousel-btn-next');
+    const carouselDots = document.querySelector('.carousel-dots');
+
+    if (carouselTrack && carouselPrev && carouselNext && carouselDots) {
+      const slides = Array.from(carouselTrack.querySelectorAll('.carousel-slide'));
+      let page = 0;
+
+      function visibleSlides() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 4;
+      }
+
+      function maxPage() {
+        return Math.max(0, Math.ceil(slides.length / visibleSlides()) - 1);
+      }
+
+      function renderDots() {
+        carouselDots.innerHTML = '';
+        for (let i = 0; i <= maxPage(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = `carousel-dot${i === page ? ' active' : ''}`;
+          dot.addEventListener('click', () => {
+            page = i;
+            renderCarousel();
+          });
+          carouselDots.appendChild(dot);
+        }
+      }
+
+      function renderCarousel() {
+        const first = slides[0];
+        if (!first) return;
+        const gap = 10;
+        const width = first.getBoundingClientRect().width + gap;
+        carouselTrack.style.transform = `translateX(-${page * visibleSlides() * width}px)`;
+        renderDots();
+      }
+
+      carouselPrev.addEventListener('click', () => {
+        page = Math.max(0, page - 1);
+        renderCarousel();
+      });
+
+      carouselNext.addEventListener('click', () => {
+        page = Math.min(maxPage(), page + 1);
+        renderCarousel();
+      });
+
+      window.addEventListener('resize', () => {
+        page = Math.min(page, maxPage());
+        renderCarousel();
+      });
+
+      renderCarousel();
+    }
+  </script>
 
 </body>
+
 </html>
