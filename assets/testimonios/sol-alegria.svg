@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Retrato de Sol Alegria</title>
+  <desc id="desc">Ilustracion minimalista de Sol Alegria.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8F5E9" />
+      <stop offset="1" stop-color="#D0E6D3" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#bg)" />
+  <circle cx="120" cy="90" r="42" fill="#F5D0B5" />
+  <path d="M72 180c8-34 32-52 48-52s40 18 48 52" fill="#3A5A40" />
+  <path d="M80 92c0-28 18-46 40-46s40 18 40 46c-14-10-26-15-40-15s-26 5-40 15z" fill="#2D4232" />
+</svg>

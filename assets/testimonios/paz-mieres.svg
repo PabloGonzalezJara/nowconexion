@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Retrato de Paz Mieres</title>
+  <desc id="desc">Ilustracion minimalista de Paz Mieres.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF4E1" />
+      <stop offset="1" stop-color="#F7E1BC" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#bg)" />
+  <circle cx="120" cy="92" r="41" fill="#F1C8A7" />
+  <path d="M72 182c7-33 30-52 48-52s41 19 48 52" fill="#85603F" />
+  <path d="M78 96c0-30 19-50 42-50s42 20 42 50c-13-11-27-17-42-17s-29 6-42 17z" fill="#5F432B" />
+</svg>

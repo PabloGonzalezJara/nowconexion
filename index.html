@@ -1180,8 +1180,9 @@
     .testimonio {
       border: 1px solid #F0F0F0;
       border-radius: 8px;
-      padding: 36px;
+      padding: 0 0 28px;
       position: relative;
+      overflow: hidden;
     }
 
     .testimonio::before {
@@ -1200,6 +1201,24 @@
       display: flex;
       gap: 4px;
       margin-bottom: 20px;
+      padding: 0 28px;
+    }
+
+    .testimonio-media {
+      width: min(72%, 220px);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      margin: 24px auto 18px;
+      background: #E9F2EA;
+      border-radius: 14px;
+    }
+
+    .testimonio-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
     }
 
     .star {
@@ -1214,26 +1233,14 @@
       line-height: 1.8;
       margin-bottom: 28px;
       font-style: italic;
+      padding: 0 28px;
     }
 
     .testimonio-autor {
       display: flex;
       align-items: center;
       gap: 14px;
-    }
-
-    .autor-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--verde-claro);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--verde);
-      flex-shrink: 0;
+      padding: 0 28px;
     }
 
     .autor-info strong {
@@ -1626,7 +1633,7 @@
       <h1 class="hero-h1">
         Networking que<br>
         <em>transforma</em><br>
-        negocios.
+        negocios
       </h1>
       <p class="hero-sub">
         La red empresarial más activa del Maule. Conectamos empresarios y emprendedores de alto nivel en encuentros que
@@ -1898,7 +1905,7 @@
         </div>
         <div class="fundador-content">
           <span class="label">Fundador</span>
-          <h2>Marcelo San Martín H.</h2>
+          <h2>Marcelo San Martín H</h2>
           <div class="divider"></div>
           <p>
             Empresario curicano con más de 15 años de trayectoria en el mundo del emprendimiento y los negocios. Marcelo
@@ -2018,11 +2025,14 @@
         <span class="label">Lo que dicen</span>
         <h2>Voces de nuestra comunidad</h2>
       </div>
-      <div class="testimonios-grid">
-        <div class="testimonio">
-          <div class="testimonio-stars">
-            <svg class="star" viewBox="0 0 24 24">
-              <polygon
+        <div class="testimonios-grid">
+          <div class="testimonio">
+            <div class="testimonio-media">
+              <img src="SolAlegria.png" alt="Sol Alegría en NowConexion" loading="lazy" decoding="async">
+            </div>
+            <div class="testimonio-stars">
+              <svg class="star" viewBox="0 0 24 24">
+                <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
             <svg class="star" viewBox="0 0 24 24">
@@ -2042,17 +2052,18 @@
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
-          <p>"En el primer encuentro cerré una alianza estratégica que nunca habría logrado de otra forma. NowConexion
-            es exactamente lo que el Maule necesitaba."</p>
+          <p>"Yo creo que es una instancia super positiva en aprendizaje, en abrir nuestra mente, para poder canalizar ideas nuevas, ampliar nuestro círculo y romper los paradigmas que nos han enseñado desde nuestra infancia y poder tener nuevos contactos."</p>
           <div class="testimonio-autor">
-            <div class="autor-avatar">C</div>
             <div class="autor-info">
-              <strong>Carlos M.</strong>
-              <span>Empresario — Curicó</span>
+              <strong>Sol Alegría</strong>
+              <span>Dueña Librería Educart</span>
             </div>
           </div>
         </div>
         <div class="testimonio">
+          <div class="testimonio-media">
+              <img src="PazMieres.jpg" alt="Paz Mieres en NowConexion" loading="lazy" decoding="async">
+            </div>
           <div class="testimonio-stars">
             <svg class="star" viewBox="0 0 24 24">
               <polygon
@@ -2075,17 +2086,18 @@
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
-          <p>"La calidad de las personas que asisten es impresionante. No es un evento cualquiera, es una selección de
-            los mejores emprendedores de la región."</p>
+          <p>"Creo que es muy importante activar las redes y las conexiones de distintos empresarios, empresarias y emprendedores y personas que también están desarrollando su marca personal en un espacio y en una región, pues como hemos conversado todo está centralizado en Santiago."</p>
           <div class="testimonio-autor">
-            <div class="autor-avatar">A</div>
             <div class="autor-info">
-              <strong>Ana P.</strong>
-              <span>Emprendedora — Talca</span>
+              <strong>Paz Mieres</strong>
+              <span>Cofundadora Consultora Libérate</span>
             </div>
           </div>
         </div>
         <div class="testimonio">
+          <div class="testimonio-media">
+              <img src="felipe.png" alt="Felipe Santa María en NowConexion" loading="lazy" decoding="async">
+            </div>
           <div class="testimonio-stars">
             <svg class="star" viewBox="0 0 24 24">
               <polygon
@@ -2108,13 +2120,11 @@
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
-          <p>"Marcelo logró crear un ambiente donde las conexiones ocurren naturalmente. Cada encuentro termina con
-            nuevas oportunidades concretas."</p>
+          <p>"Bastante interesante, no había participado nunca de algo donde participen más emprendedores, sobre todo de la misma zona donde vivo uno; estoy agradecido de la invitación, espero poder participar en los próximos eventos y poder seguir conociendo gente como uno y tratar de hacer la mayor cantidad de conexiones."</p>
           <div class="testimonio-autor">
-            <div class="autor-avatar">R</div>
             <div class="autor-info">
-              <strong>Roberto L.</strong>
-              <span>Empresario — Maule</span>
+              <strong>Felipe Santa María</strong>
+              <span>Empresario</span>
             </div>
           </div>
         </div>
@@ -2127,7 +2137,7 @@
     <div class="container">
       <div class="cta-inner">
         <span class="label">Súmate</span>
-        <h2>Tu próximo gran<br>contacto te está<br><em>esperando.</em></h2>
+        <h2>Tu próximo gran<br>contacto te está<br><em>esperando</em></h2>
         <p>
           Sé parte de la red empresarial que está cambiando el ecosistema del Maule. Cupos limitados por edición.
         </p>
@@ -2145,7 +2155,9 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="#hero" class="nav-logo">Now<span>Conexion</span></a>
+          <a href="#hero" class="nav-logo" aria-label="NowConexion">
+        <img src="nombrelogo.png" alt="NowConexion" />
+      </a>
           <p>Red de networking empresarial del Maule. Conectando empresarios y emprendedores desde 2024.</p>
           <div class="footer-social">
             <!-- Instagram -->

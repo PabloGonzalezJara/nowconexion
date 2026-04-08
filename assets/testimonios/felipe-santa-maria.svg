@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Retrato de Felipe Santa Maria</title>
+  <desc id="desc">Ilustracion minimalista de Felipe Santa Maria.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E7EDF8" />
+      <stop offset="1" stop-color="#CFDBEE" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#bg)" />
+  <circle cx="120" cy="92" r="41" fill="#E5BE9F" />
+  <path d="M70 184c9-35 32-54 50-54s41 19 50 54" fill="#2F4A64" />
+  <path d="M76 96c0-31 20-50 44-50s44 19 44 50c-15-11-29-17-44-17s-29 6-44 17z" fill="#1C2D3F" />
+  <rect x="96" y="108" width="48" height="8" rx="4" fill="#D7A681" />
+</svg>
