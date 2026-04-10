@@ -517,7 +517,7 @@
       border-radius: 8px;
       overflow: hidden;
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: 1fr;
     }
 
     .evento-main {
@@ -525,8 +525,10 @@
     }
 
     .evento-tag {
-      display: inline-flex;
+      display: flex;
+      width: 100%;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       background: rgba(45, 138, 46, .15);
       border: 1px solid rgba(45, 138, 46, .3);
@@ -536,6 +538,9 @@
     }
 
     .evento-tag span {
+      display: block;
+      width: 100%;
+      text-align: center;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 3px;
@@ -544,11 +549,12 @@
     }
 
     .evento-main h3 {
-      font-size: 32px;
+      font-size: clamp(34px, 5vw, 56px);
       font-weight: 900;
       color: var(--blanco);
       line-height: 1.15;
       margin-bottom: 20px;
+      max-width: 940px;
     }
 
     .evento-main p {
@@ -562,6 +568,7 @@
       display: flex;
       gap: 28px;
       flex-wrap: wrap;
+      justify-content: center;
       margin-bottom: 40px;
     }
 
@@ -883,6 +890,40 @@
 
     .galeria-header {
       margin-bottom: 36px;
+    }
+
+    .galeria-eventos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .galeria-evento-btn {
+      border: 1px solid #D7D7D7;
+      background: #fff;
+      color: var(--gris-oscuro);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .galeria-evento-btn.active {
+      border-color: var(--verde);
+      background: var(--verde);
+      color: #fff;
+    }
+
+    .galeria-evento-activo {
+      margin-top: 14px;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gris-medio);
     }
 
     .galeria-header h2 {
@@ -1745,19 +1786,13 @@
           <span class="label">Agenda</span>
           <h2>Próximo encuentro</h2>
         </div>
-        <a href="#cta" class="btn-primary">Reservar mi lugar</a>
+        <!-- <a href="#cta" class="btn-primary">Reservar mi lugar</a> -->
       </div>
       <div class="evento-card">
         <div class="evento-main">
-          <div class="evento-tag">
-            <span>Próximamente</span>
-          </div>
-          <h3>NowConexion<br>Maule — Edición 2026</h3>
-          <p>
-            Un encuentro diseñado para empresarios y emprendedores que quieren expandir su red, explorar nuevas alianzas
-            y escuchar a referentes que están transformando sus industrias. Networking de alto impacto en un ambiente
-            exclusivo.
-          </p>
+          
+          <h3>No te pierdas nuestra próxima Charla de alto impacto. ¡Pronto novedades!</h3>
+         
           <div class="evento-detalles">
             <div class="evento-detalle">
               <svg viewBox="0 0 24 24">
@@ -1766,26 +1801,26 @@
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
-              <span>8 de Abril — 2026</span>
+              <span>Por confirmar</span>
             </div>
             <div class="evento-detalle">
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              <span>19:00 — 22:00 hrs</span>
+              <span>Por confirmar</span>
             </div>
             <div class="evento-detalle">
               <svg viewBox="0 0 24 24">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span>Club Aéreo Aeródromo, Curicó</span>
+              <span>Por confirmar</span>
             </div>
           </div>
-          <a href="#cta" class="btn-primary">Reservar lugar</a>
+          <!-- <a href="#cta" class="btn-primary">Reservar lugar</a> -->
         </div>
-        <div class="evento-sidebar">
+        <!-- <div class="evento-sidebar">
           <div>
 
             <div class="evento-fecha-num">—</div>
@@ -1798,7 +1833,7 @@
             </div>
             <a href="#cta" class="btn-primary-dark">Asegurar mi cupo</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -1945,40 +1980,12 @@
         <div>
           <span class="label">Encuentros pasados</span>
           <h2>Lo que vivimos juntos</h2>
+          <div class="galeria-eventos" id="galeriaEventos"></div>
+          <p class="galeria-evento-activo" id="galeriaEventoActivo"></p>
         </div>
       </div>
       <div class="galeria-featured">
-        <button class="galeria-featured-item" type="button" data-gallery-item
-          data-caption="Diciembre 2024 — Primer encuentro NowConexion">
-          <div class="galeria-media">
-            <img src="https://lh3.googleusercontent.com/u/0/d/1QUatTXwERxFTMkaNAYvvfC59-PYeq-Gs"
-              alt="Foto del primer encuentro" class="galeria-img" />
-          </div>
-          <div class="galeria-overlay"><span>Diciembre 2024 — Primer encuentro NowConexion</span></div>
-        </button>
-        <button class="galeria-featured-item" type="button" data-gallery-item data-caption="Networking en accion">
-          <div class="galeria-media">
-            <img src="https://lh3.googleusercontent.com/u/0/d/1vZUmNL_LMiG8vZe30cBB-5WEY7VjChoN"
-              alt="Networking en accion" class="galeria-img" />
-          </div>
-          <div class="galeria-overlay"><span>Networking en accion</span></div>
-        </button>
-        <button class="galeria-featured-item" type="button" data-gallery-item data-caption="Conferencista invitado">
-          <div class="galeria-media"><img
-              src="https://lh3.googleusercontent.com/u/0/d/1xrmTA-ToGMW6oVzSaxa6xIILVcJhCJpz"
-              alt="Conferencista invitado" class="galeria-img" /></div>
 
-          <div class="galeria-overlay"><span>Conferencista invitado</span></div>
-
-        </button>
-        <button class="galeria-featured-item" type="button" data-gallery-item data-caption="La comunidad NOW">
-          <div class="galeria-media"><img
-              src="https://lh3.googleusercontent.com/u/0/d/1qgdKVzs8mUE0R_MIlLhbAYZMc2XXCyvf"
-              alt="Conferencista invitado" class="galeria-img" /></div>
-
-
-          <div class="galeria-overlay"><span>La comunidad </span></div>
-        </button>
       </div>
 
       <div class="galeria-carousel">
@@ -2282,53 +2289,179 @@
       observer.observe(el);
     });
 
-    // ─── Galeria (destacadas + carrusel + lightbox) ───
-    // Pega aqui los links de las fotos del carrusel (Foto 5 a Foto 9)
-    const carouselData = [
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1o5Nc3OVskkVRJrAGFQiaHS4Xs_0V2mx6' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1cd8gHcxdvzV6XZh6rDOIrmsSMMWn8ZA6' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1iWiSoTlMuIDnxVIrvtiVXdXW77m5yP5k' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1VyVS-CATcGEOR0DAE2yRnXRcAULIWxGn' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1SsSFNyrKvoKUouhZpTeRBHxSMcz7rHoC' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1c8wsA4ldvaPPxuRcK3xP69vCfe56wWMT' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/14UHmaJtP7GoGbj1ALmLIq6qlU3PloPgZ' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1cAyOS5VuqTikqHWKHE5BN3SbYS87v_5Y' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1h5O07v7MXzJgvz0GesnC_IQQ37X2yaB4' },
-      { src: 'https://lh3.googleusercontent.com/u/0/d/14kLHTyOBZ8OOvD2EgBSmrZcznu4JbnJT'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/16hB5br2RJkXrU_fM98p2wHw2dOW7Fstw'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/18d03uS1HHAzxBtqpvBNL4BHu8xDrYMsz'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1gc-W06Xhj0j1-hESJ_OvRtodAfvfpyHc'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1HkJ1pGua4zsXMwRzhRm4iOH2XQuV9gUi'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1lDmL8Rdxv82rSF3ofm1ZOhPt9vt7wbAR'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/18BIp-DPSEvDcpsgF7j2s1rUtTRxj10kG'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1I6hKXyWWhXzJaGEFwWSQt9sybguAL4RP'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1baEtpDUKXaa3olwUkO5OS0r2itCPY4ng'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1KvsxpVlihuD8yHwqEZaab_Kg3TTvfqLG'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1At_iQQHjOHaJ9ffXuL6OzbXc-a75Y7_u'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1IoNnJHRnzyi2BsVASHmlpWnrOflpZZPn'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1I1iYTG3FIi6hgmiCExNj40Hldpf4Pc6i'},
-      { src: 'https://lh3.googleusercontent.com/u/0/d/1U5zkcr38YdHVX1dW2kkALTLNf87n-8ZA'}
+    // ─── Galeria (organizada por evento con ano/fecha) ───
+    const galleryEvents = [
+      {
+        year: '2024',
+        date: 'Diciembre 2024',
+        title: 'Primer encuentro NowConexion',
+        photos: [
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1QUatTXwERxFTMkaNAYvvfC59-PYeq-Gs', caption: 'Apertura del encuentro' },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1vZUmNL_LMiG8vZe30cBB-5WEY7VjChoN', caption: 'Networking en accion' },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1xrmTA-ToGMW6oVzSaxa6xIILVcJhCJpz', caption: 'Conferencista invitado' },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1qgdKVzs8mUE0R_MIlLhbAYZMc2XXCyvf', caption: 'Comunidad NOW' },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1o5Nc3OVskkVRJrAGFQiaHS4Xs_0V2mx6',   },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1cd8gHcxdvzV6XZh6rDOIrmsSMMWn8ZA6',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1iWiSoTlMuIDnxVIrvtiVXdXW77m5yP5k',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1VyVS-CATcGEOR0DAE2yRnXRcAULIWxGn',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1SsSFNyrKvoKUouhZpTeRBHxSMcz7rHoC',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1c8wsA4ldvaPPxuRcK3xP69vCfe56wWMT',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/14UHmaJtP7GoGbj1ALmLIq6qlU3PloPgZ',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1cAyOS5VuqTikqHWKHE5BN3SbYS87v_5Y',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1h5O07v7MXzJgvz0GesnC_IQQ37X2yaB4',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/14kLHTyOBZ8OOvD2EgBSmrZcznu4JbnJT',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/16hB5br2RJkXrU_fM98p2wHw2dOW7Fstw',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/18d03uS1HHAzxBtqpvBNL4BHu8xDrYMsz',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1gc-W06Xhj0j1-hESJ_OvRtodAfvfpyHc',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1HkJ1pGua4zsXMwRzhRm4iOH2XQuV9gUi',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1lDmL8Rdxv82rSF3ofm1ZOhPt9vt7wbAR', },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/18BIp-DPSEvDcpsgF7j2s1rUtTRxj10kG',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1I6hKXyWWhXzJaGEFwWSQt9sybguAL4RP', },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1baEtpDUKXaa3olwUkO5OS0r2itCPY4ng',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1KvsxpVlihuD8yHwqEZaab_Kg3TTvfqLG',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1At_iQQHjOHaJ9ffXuL6OzbXc-a75Y7_u',  },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1IoNnJHRnzyi2BsVASHmlpWnrOflpZZPn', },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1I1iYTG3FIi6hgmiCExNj40Hldpf4Pc6i', },
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1U5zkcr38YdHVX1dW2kkALTLNf87n-8ZA', }
+        ]
+      },
+      {
+        year: '2026',
+        date: 'Abril 2026',
+        title: 'Primer encuentro, Balance 2025 y proyección 2026',
+        photos: [
+          {src:'https://lh3.googleusercontent.com/u/0/d/1W9sVoAevjrVD0X2O6DfEL-KioljqHGZH',  },
+          {src:'https://lh3.googleusercontent.com/u/0/d/1Nl32uQquiHFY-25ysUZj9mlDMYZF7CoY',  },
+        {src:'https://lh3.googleusercontent.com/u/0/d/1QgJw6cYYKSGZMJ5leNocKahhUMVXfNtC',  },
+        {src:'https://lh3.googleusercontent.com/u/0/d/1MlX4QVK_kW3LorkTwhu_78ta14_j7qFi',  },
+        {src:'https://lh3.googleusercontent.com/u/0/d/1XyzPlr3wRQ2c4PXKhP8IcRqzZZx1cx50',  },
+         {src:'https://lh3.googleusercontent.com/u/0/d/10k2yhLVUqTccDZjNpmflVIsDPhmIR6ZC',  },
+          {src:'https://lh3.googleusercontent.com/u/0/d/1rSxMEsB8Q1RUctNAJXGT_UDJXmXlnev9',  },
+
+        
+           {src:'https://lh3.googleusercontent.com/u/0/d/1b694MqIFnnN9NFcfFabJ2zL37sdThYqA', },
+           {src:'https://lh3.googleusercontent.com/u/0/d/1Oam5w_lVirmUnoXQNpn8yY_VDam1tCGh',  },
+           {src:'https://lh3.googleusercontent.com/u/0/d/1I15ZBaAQShww8ZiwBbSK-IQ3evGDpbZg',  },
+        
+        ]
+      },
+     
     ];
 
-    const carouselTrackNode = document.querySelector('.carousel-track');
-    if (carouselTrackNode && carouselTrackNode.children.length === 0) {
-      carouselData.forEach((item, index) => {
-        const slide = document.createElement('button');
-        slide.type = 'button';
-        slide.className = 'carousel-slide';
-        slide.setAttribute('data-gallery-item', '');
-        slide.dataset.caption = item.label;
+    const galeriaFeatured = document.querySelector('.galeria-featured');
+    const galeriaCarousel = document.querySelector('.galeria-carousel');
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselPrev = document.querySelector('.carousel-btn-prev');
+    const carouselNext = document.querySelector('.carousel-btn-next');
+    const carouselDots = document.querySelector('.carousel-dots');
+    const galeriaEventos = document.getElementById('galeriaEventos');
+    const galeriaEventoActivo = document.getElementById('galeriaEventoActivo');
 
-        const mediaHtml = item.src
-          ? `<img src="${item.src}" alt="Foto carrusel ${index + 5}" class="galeria-img">`
-          : item.label;
+    let selectedEvent = 0;
+    let galleryItems = [];
+    let slides = [];
+    let page = 0;
 
-        slide.innerHTML = `<div class="galeria-media">${mediaHtml}</div><div class="galeria-overlay"></div>`;
-        carouselTrackNode.appendChild(slide);
+    function createGalleryButton(item, index, kind) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = kind === 'featured' ? 'galeria-featured-item' : 'carousel-slide';
+      button.setAttribute('data-gallery-item', '');
+      button.dataset.galleryIndex = String(index);
+      button.dataset.caption = item.caption;
+      button.innerHTML = `<div class="galeria-media"><img src="${item.src}" alt="${item.caption || ''}" class="galeria-img" loading="lazy" decoding="async"></div><div class="galeria-overlay"><span>${item.caption || ''}</span></div>`;
+      return button;
+    }
+
+    function visibleSlides() {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 4;
+    }
+
+    function maxPage() {
+      return Math.max(0, Math.ceil(slides.length / visibleSlides()) - 1);
+    }
+
+    function renderDots() {
+      if (!carouselDots) return;
+      carouselDots.innerHTML = '';
+      for (let i = 0; i <= maxPage(); i++) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = `carousel-dot${i === page ? ' active' : ''}`;
+        dot.addEventListener('click', () => {
+          page = i;
+          renderCarousel();
+        });
+        carouselDots.appendChild(dot);
+      }
+    }
+
+    function renderCarousel() {
+      const first = slides[0];
+      if (!first || !carouselTrack) {
+        if (carouselDots) carouselDots.innerHTML = '';
+        return;
+      }
+      const gap = 10;
+      const width = first.getBoundingClientRect().width + gap;
+      carouselTrack.style.transform = `translateX(-${page * visibleSlides() * width}px)`;
+      renderDots();
+    }
+
+    function renderEventTabs() {
+      if (!galeriaEventos) return;
+      galeriaEventos.innerHTML = '';
+      galleryEvents.forEach((eventItem, index) => {
+        const tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = `galeria-evento-btn${index === selectedEvent ? ' active' : ''}`;
+        tab.textContent = `${eventItem.date}`;
+        tab.addEventListener('click', () => {
+          selectedEvent = index;
+          renderSelectedEvent();
+        });
+        galeriaEventos.appendChild(tab);
       });
     }
 
-    const galleryItems = Array.from(document.querySelectorAll('[data-gallery-item]'));
+    function renderSelectedEvent() {
+      const eventItem = galleryEvents[selectedEvent];
+      if (!eventItem || !galeriaFeatured || !carouselTrack) return;
+
+      galleryItems = eventItem.photos;
+      const featuredPhotos = eventItem.photos.slice(0, 4);
+      const carouselPhotos = eventItem.photos.slice(4);
+
+      galeriaFeatured.innerHTML = '';
+      featuredPhotos.forEach((photo, index) => {
+        galeriaFeatured.appendChild(createGalleryButton(photo, index, 'featured'));
+      });
+
+      carouselTrack.innerHTML = '';
+      carouselPhotos.forEach((photo, index) => {
+        carouselTrack.appendChild(createGalleryButton(photo, index + featuredPhotos.length, 'carousel'));
+      });
+
+      if (galeriaEventoActivo) {
+        galeriaEventoActivo.textContent = `${eventItem.year} · ${eventItem.date} · ${eventItem.title}`;
+      }
+
+      if (galeriaCarousel) {
+        galeriaCarousel.style.display = carouselPhotos.length ? 'block' : 'none';
+      }
+
+      slides = Array.from(carouselTrack.querySelectorAll('.carousel-slide'));
+      page = 0;
+      renderEventTabs();
+      renderCarousel();
+    }
+
+    if (galeriaFeatured && carouselTrack) {
+      renderSelectedEvent();
+    }
+
     const lightbox = document.getElementById('lightbox');
     const lightboxContent = document.getElementById('lightboxContent');
     const lightboxCounter = document.getElementById('lightboxCounter');
@@ -2340,13 +2473,12 @@
 
     function renderLightbox(index) {
       const item = galleryItems[index];
-      const img = item.querySelector('.galeria-img');
-      const caption = item.dataset.caption || 'Foto';
+      if (!item) return;
 
-      if (img && img.src) {
-        lightboxContent.innerHTML = `<img src="${img.src}" alt="${caption}">`;
+      if (item.src) {
+        lightboxContent.innerHTML = `<img src="${item.src}" alt="${item.caption || ''}" class="lightbox-img">`;
       } else {
-        lightboxContent.innerHTML = `<div class="lightbox-placeholder">${caption}</div>`;
+        lightboxContent.innerHTML = `<div class="lightbox-placeholder">${item.caption || ''}</div>`;
       }
 
       lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
@@ -2369,8 +2501,12 @@
       renderLightbox(lightboxIndex);
     }
 
-    galleryItems.forEach((item, index) => {
-      item.addEventListener('click', () => openLightbox(index));
+    document.addEventListener('click', (event) => {
+      const trigger = event.target.closest('[data-gallery-item]');
+      if (!trigger) return;
+      const index = Number(trigger.dataset.galleryIndex);
+      if (Number.isNaN(index)) return;
+      openLightbox(index);
     });
 
     lightboxClose.addEventListener('click', closeLightbox);
@@ -2394,49 +2530,7 @@
       if (e.key === 'ArrowRight') stepLightbox(1);
     });
 
-    // Carrusel por paginas (independiente del lightbox)
-    const carouselTrack = document.querySelector('.carousel-track');
-    const carouselPrev = document.querySelector('.carousel-btn-prev');
-    const carouselNext = document.querySelector('.carousel-btn-next');
-    const carouselDots = document.querySelector('.carousel-dots');
-
     if (carouselTrack && carouselPrev && carouselNext && carouselDots) {
-      const slides = Array.from(carouselTrack.querySelectorAll('.carousel-slide'));
-      let page = 0;
-
-      function visibleSlides() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 4;
-      }
-
-      function maxPage() {
-        return Math.max(0, Math.ceil(slides.length / visibleSlides()) - 1);
-      }
-
-      function renderDots() {
-        carouselDots.innerHTML = '';
-        for (let i = 0; i <= maxPage(); i++) {
-          const dot = document.createElement('button');
-          dot.type = 'button';
-          dot.className = `carousel-dot${i === page ? ' active' : ''}`;
-          dot.addEventListener('click', () => {
-            page = i;
-            renderCarousel();
-          });
-          carouselDots.appendChild(dot);
-        }
-      }
-
-      function renderCarousel() {
-        const first = slides[0];
-        if (!first) return;
-        const gap = 10;
-        const width = first.getBoundingClientRect().width + gap;
-        carouselTrack.style.transform = `translateX(-${page * visibleSlides() * width}px)`;
-        renderDots();
-      }
-
       carouselPrev.addEventListener('click', () => {
         page = Math.max(0, page - 1);
         renderCarousel();
@@ -2451,8 +2545,6 @@
         page = Math.min(page, maxPage());
         renderCarousel();
       });
-
-      renderCarousel();
     }
   </script>
 
