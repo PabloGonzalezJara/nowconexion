@@ -1372,6 +1372,226 @@
       color: var(--blanco);
     }
 
+    /* ─── WORKSHOPS ─── */
+    #workshop {
+      background: var(--blanco);
+    }
+
+    .workshop-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .workshop-header .divider {
+      margin: 16px 0 20px;
+    }
+
+    /* ─── Workshop Carousel ─── */
+    .workshop-carousel-wrapper {
+      position: relative;
+      padding: 0 4px;
+    }
+
+    .workshop-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 16px;
+      padding: 4px 0 8px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .workshop-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Centrado cuando hay 1-2 workshops */
+    .workshop-grid--centered {
+      justify-content: center;
+    }
+
+    .workshop-card {
+      flex: 0 0 auto;
+      width: 400px;
+      scroll-snap-align: start;
+      border: 1px solid #F0F0F0;
+      border-radius: 8px;
+      background: var(--blanco);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .workshop-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+      transform: translateY(-2px);
+    }
+
+    /* Hero image — formato Instagram (4:5 portrait), capped to viewport */
+    .workshop-hero {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      max-height: 55vh;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--gris-claro);
+    }
+
+    .workshop-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition);
+    }
+
+    .workshop-hero:hover img {
+      transform: scale(1.05);
+    }
+
+    .workshop-photo-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, .55);
+      color: var(--blanco);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    /* Card body */
+    .workshop-card-body {
+      padding: 14px 20px 20px;
+    }
+
+    .workshop-date {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 4px;
+    }
+
+    .workshop-title {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .workshop-desc {
+      font-size: 13px;
+      color: var(--gris-medio);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* CTA button */
+    .workshop-link {
+      display: inline-block;
+      background: var(--verde);
+      color: var(--blanco);
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background var(--transition);
+    }
+
+    .workshop-link:hover {
+      background: var(--verde-oscuro);
+    }
+
+    /* Carousel navigation arrows */
+    .workshop-arrow {
+      position: absolute;
+      top: 42%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--verde);
+      background: var(--blanco);
+      color: var(--verde);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .workshop-arrow:hover {
+      background: var(--verde);
+      color: var(--blanco);
+    }
+
+    .workshop-arrow:disabled {
+      opacity: .25;
+      cursor: default;
+    }
+
+    .workshop-arrow svg {
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      width: 18px;
+      height: 18px;
+    }
+
+    .workshop-arrow-prev {
+      left: -20px;
+    }
+
+    .workshop-arrow-next {
+      right: -20px;
+    }
+
+    /* Carousel dots */
+    .workshop-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .workshop-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #D0D0D0;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background var(--transition);
+    }
+
+    .workshop-dot.active {
+      background: var(--verde);
+    }
+
+    /* Empty state */
+    .workshop-empty {
+      text-align: center;
+      font-size: 16px;
+      color: var(--gris-medio);
+      padding: 40px 0;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: #111;
@@ -1608,6 +1828,18 @@
       .lightbox-next {
         right: 10px;
       }
+
+      .workshop-card {
+        width: 320px;
+      }
+
+      .workshop-card-body {
+        padding: 14px 18px 18px;
+      }
+
+      .workshop-arrow {
+        display: none;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1622,6 +1854,11 @@
       .lightbox-placeholder {
         min-width: 260px;
         min-height: 180px;
+      }
+
+      .workshop-card {
+        width: calc(100vw - 72px);
+        max-width: 340px;
       }
     }
   </style>
@@ -1638,6 +1875,7 @@
       <ul class="nav-links">
         <li><a href="#sobre">Quiénes somos</a></li>
         <li><a href="#evento">Próximo evento</a></li>
+        <li><a href="#workshop">Workshops</a></li>
         <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#galeria">Encuentros</a></li>
         <li><a href="#fundador">Fundador</a></li>
@@ -1656,6 +1894,7 @@
     <button class="mobile-close" id="mobileClose" aria-label="Cerrar">&times;</button>
     <a href="#sobre" class="mobile-link">Quiénes somos</a>
     <a href="#evento" class="mobile-link">Próximo evento</a>
+    <a href="#workshop" class="mobile-link">Workshops</a>
     <a href="#beneficios" class="mobile-link">Beneficios</a>
     <a href="#galeria" class="mobile-link">Encuentros</a>
     <a href="#fundador" class="mobile-link">Fundador</a>
@@ -1835,6 +2074,27 @@
           </div>
         </div> -->
       </div>
+    </div>
+  </section>
+
+  <!-- ─── WORKSHOPS ─── -->
+  <section id="workshop" class="section">
+    <div class="container">
+      <div class="workshop-header">
+        <span class="label">Workshops</span>
+        <h2>Próximos Workshops</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="workshop-carousel-wrapper">
+        <button class="workshop-arrow workshop-arrow-prev" id="workshopPrev" aria-label="Anterior" type="button">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+        <div class="workshop-grid" id="workshopList"></div>
+        <button class="workshop-arrow workshop-arrow-next" id="workshopNext" aria-label="Siguiente" type="button">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+      </div>
+      <div class="workshop-dots" id="workshopDots"></div>
     </div>
   </section>
 
@@ -2193,6 +2453,7 @@
             <li><a href="#sobre">Quiénes somos</a></li>
             <li><a href="#evento">Próximo evento</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#workshop">Workshops</a></li>
             <li><a href="#galeria">Encuentros</a></li>
           </ul>
         </div>
@@ -2506,6 +2767,8 @@
       if (!trigger) return;
       const index = Number(trigger.dataset.galleryIndex);
       if (Number.isNaN(index)) return;
+      // Ensure galleryItems reflects the current selected event (workshop photos may have overwritten it)
+      if (galleryEvents[selectedEvent]) galleryItems = galleryEvents[selectedEvent].photos;
       openLightbox(index);
     });
 
@@ -2546,6 +2809,210 @@
         renderCarousel();
       });
     }
+
+    // ─── Workshop Section ───
+    // Verificación:
+    // 1. Links del menú (desktop + mobile + footer) llevan a #workshop
+    // 2. Las tarjetas se ordenan por fecha (más reciente primero)
+    // 3. Carousel horizontal con scroll-snap, flechas y dots de posición
+    // 4. Imagen hero en cada tarjeta (object-fit cover) con badge de contador de fotos
+    // 5. Click en hero abre lightbox con TODAS las fotos del workshop
+    // 6. Botón "Participa aquí" condicional (solo si tiene link)
+    // 7. Layout responsive: cards más angostas en mobile, todo visible sin scroll vertical
+    // 8. Regresión: la galería de Encuentros sigue abriendo sus propias fotos
+
+    const workshops = [
+      {
+        date: '2026-05-19',
+        time: '20:00',
+        title: 'Neuroplasticidad: La ciencia de liderar con foro y sin agotamiento',
+        description: '',
+        link: 'https://forms.gle/dxs9zXAZBi3xASdk6',
+        photos: [
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1bU0NXbY22iR4Tf6ddJ0KEF2erxsfbXjD', caption: '' },
+         
+        ]
+      }
+    ];
+
+    function sortWorkshopsByDateDesc(items) {
+      return items.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    }
+
+    function formatWorkshopDate(date, time) {
+      var d = new Date(date + 'T00:00:00Z');
+      var months = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+      return d.getUTCDate() + ' ' + months[d.getUTCMonth()] + ' ' + d.getUTCFullYear() + ' · ' + time;
+    }
+
+    function renderWorkshops() {
+      var list = document.getElementById('workshopList');
+      var heading = document.querySelector('#workshop h2');
+      var wrapper = list ? list.parentElement : null;
+      var dotsEl = document.getElementById('workshopDots');
+      var prevBtn = document.getElementById('workshopPrev');
+      var nextBtn = document.getElementById('workshopNext');
+      if (!list) return;
+
+      list.innerHTML = '';
+      if (dotsEl) dotsEl.innerHTML = '';
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+
+      var sorted = sortWorkshopsByDateDesc(workshops);
+
+      if (sorted.length === 0) {
+        list.innerHTML = '<p class="workshop-empty">Próximamente nuevos workshops</p>';
+        if (heading) heading.textContent = 'Próximos Workshops';
+        return;
+      }
+
+      if (heading) {
+        heading.textContent = sorted.length === 1 ? 'Próximo Workshop' : 'Próximos Workshops';
+      }
+
+      if (sorted.length > 1) {
+        if (prevBtn) prevBtn.style.display = '';
+        if (nextBtn) nextBtn.style.display = '';
+      }
+
+      sorted.forEach(function (workshop) {
+        var card = document.createElement('div');
+        card.className = 'workshop-card';
+
+        // Hero image
+        if (workshop.photos && workshop.photos.length > 0) {
+          var hero = document.createElement('div');
+          hero.className = 'workshop-hero';
+          hero.innerHTML = '<img src="' + workshop.photos[0].src + '" alt="' + (workshop.photos[0].caption || workshop.title) + '" loading="lazy">';
+
+          // Photo counter badge (only if >1 photo)
+          if (workshop.photos.length > 1) {
+            var badge = document.createElement('span');
+            badge.className = 'workshop-photo-badge';
+            badge.textContent = '1/' + workshop.photos.length;
+            hero.appendChild(badge);
+          }
+
+          // Click hero → open lightbox with all photos
+          hero.addEventListener('click', function (event) {
+            event.stopPropagation();
+            galleryItems = workshop.photos;
+            openLightbox(0);
+          });
+
+          card.appendChild(hero);
+        }
+
+        // Card body
+        var body = document.createElement('div');
+        body.className = 'workshop-card-body';
+
+        // Date
+        var dateEl = document.createElement('div');
+        dateEl.className = 'workshop-date';
+        dateEl.textContent = formatWorkshopDate(workshop.date, workshop.time);
+        body.appendChild(dateEl);
+
+        // Title
+        var titleEl = document.createElement('h3');
+        titleEl.className = 'workshop-title';
+        titleEl.textContent = workshop.title;
+        body.appendChild(titleEl);
+
+        // Description
+        if (workshop.description) {
+          var descEl = document.createElement('p');
+          descEl.className = 'workshop-desc';
+          descEl.textContent = workshop.description;
+          body.appendChild(descEl);
+        }
+
+        // CTA button
+        if (workshop.link && workshop.link.trim() !== '') {
+          var linkEl = document.createElement('a');
+          linkEl.className = 'workshop-link';
+          linkEl.href = workshop.link;
+          linkEl.target = '_blank';
+          linkEl.rel = 'noopener noreferrer';
+          linkEl.textContent = 'Participa aquí';
+          body.appendChild(linkEl);
+        }
+
+        card.appendChild(body);
+        list.appendChild(card);
+      });
+
+      // Centrar cards cuando hay pocas (1-2 workshops)
+      if (sorted.length <= 2) {
+        list.classList.add('workshop-grid--centered');
+      } else {
+        list.classList.remove('workshop-grid--centered');
+      }
+
+      // Build dot navigation
+      if (dotsEl && sorted.length > 1) {
+        sorted.forEach(function (_, i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'workshop-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Ir a tarjeta ' + (i + 1));
+          dot.addEventListener('click', function () {
+            var cards = list.querySelectorAll('.workshop-card');
+            if (cards[i]) cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+          });
+          dotsEl.appendChild(dot);
+        });
+      }
+
+      // Update active dot on scroll
+      var scrollTimeout;
+      list.addEventListener('scroll', function () {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function () {
+          updateActiveDot();
+        }, 50);
+      });
+
+      function getCardWidth() {
+        var firstCard = list.querySelector('.workshop-card');
+        if (!firstCard) return 400;
+        var style = window.getComputedStyle(firstCard);
+        var gap = 16; // matches CSS gap
+        return firstCard.getBoundingClientRect().width + gap;
+      }
+
+      function updateActiveDot() {
+        var dots = dotsEl ? dotsEl.querySelectorAll('.workshop-dot') : [];
+        if (!dots.length) return;
+        var cardW = getCardWidth();
+        if (cardW <= 0) return;
+        // Find which card's left edge is closest to the scroll position + half card width (center)
+        var center = list.scrollLeft + list.clientWidth / 2;
+        var idx = Math.round(center / cardW);
+        idx = Math.max(0, Math.min(dots.length - 1, idx));
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+    }
+
+    function scrollWorkshop(dir) {
+      var list = document.getElementById('workshopList');
+      if (!list) return;
+      var firstCard = list.querySelector('.workshop-card');
+      if (!firstCard) return;
+      var gap = 16;
+      var cardW = firstCard.getBoundingClientRect().width + gap;
+      list.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+    }
+
+    var workshopPrev = document.getElementById('workshopPrev');
+    var workshopNext = document.getElementById('workshopNext');
+    if (workshopPrev) workshopPrev.addEventListener('click', function () { scrollWorkshop(-1); });
+    if (workshopNext) workshopNext.addEventListener('click', function () { scrollWorkshop(1); });
+
+    renderWorkshops();
   </script>
 
 </body>
