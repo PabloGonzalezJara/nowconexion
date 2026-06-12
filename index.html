@@ -2823,6 +2823,19 @@
 
     const workshops = [
       {
+        date: '2026-06-13',
+        time: '11:00',
+        title: 'Conversatorio interactivo con Tomás Mosciatti',
+        description: '',
+        link: 'https://marcelo-san-martin.flycrew.com/e/ce56d2d7526ac4ae/register',
+        photos: [
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1YZ3wP9iYqvKdKHKvmQpoSx9MK6q1VQbN', caption: '' },
+         
+        ],
+        buttonText: 'Compra tu entrada aquí'
+
+      },
+      {
         date: '2026-05-19',
         time: '20:00',
         title: 'Neuroplasticidad: La ciencia de liderar con foro y sin agotamiento',
@@ -2831,7 +2844,9 @@
         photos: [
           { src: 'https://lh3.googleusercontent.com/u/0/d/1bU0NXbY22iR4Tf6ddJ0KEF2erxsfbXjD', caption: '' },
          
-        ]
+        ],
+        buttonText: 'Participa aquí'
+
       }
     ];
 
@@ -2935,7 +2950,7 @@
           linkEl.href = workshop.link;
           linkEl.target = '_blank';
           linkEl.rel = 'noopener noreferrer';
-          linkEl.textContent = 'Participa aquí';
+          linkEl.textContent = workshop.buttonText || 'Participa aquí';
           body.appendChild(linkEl);
         }
 
