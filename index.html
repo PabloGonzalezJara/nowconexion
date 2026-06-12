@@ -1874,7 +1874,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#sobre">Quiénes somos</a></li>
-        <li><a href="#evento">Próximo evento</a></li>
+        <li><a href="#evento">Eventos</a></li>
         <li><a href="#workshop">Workshops</a></li>
         <li><a href="#beneficios">Beneficios</a></li>
         <li><a href="#galeria">Encuentros</a></li>
@@ -1893,7 +1893,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-close" id="mobileClose" aria-label="Cerrar">&times;</button>
     <a href="#sobre" class="mobile-link">Quiénes somos</a>
-    <a href="#evento" class="mobile-link">Próximo evento</a>
+    <a href="#evento" class="mobile-link">Eventos</a>
     <a href="#workshop" class="mobile-link">Workshops</a>
     <a href="#beneficios" class="mobile-link">Beneficios</a>
     <a href="#galeria" class="mobile-link">Encuentros</a>
@@ -2017,63 +2017,24 @@
     </div>
   </section>
 
-  <!-- ─── PRÓXIMO EVENTO ─── -->
+  <!-- ─── EVENTOS ─── -->
   <section id="evento" class="section">
     <div class="container">
-      <div class="evento-header">
-        <div>
-          <span class="label">Agenda</span>
-          <h2>Próximo encuentro</h2>
-        </div>
-        <!-- <a href="#cta" class="btn-primary">Reservar mi lugar</a> -->
+      <div class="workshop-header">
+        <span class="label">Agenda</span>
+        <h2>Eventos</h2>
+        <div class="divider"></div>
       </div>
-      <div class="evento-card">
-        <div class="evento-main">
-          
-          <h3>No te pierdas nuestra próxima Charla de alto impacto. ¡Pronto novedades!</h3>
-         
-          <div class="evento-detalles">
-            <div class="evento-detalle">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
-              <span>Por confirmar</span>
-            </div>
-            <div class="evento-detalle">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>Por confirmar</span>
-            </div>
-            <div class="evento-detalle">
-              <svg viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>Por confirmar</span>
-            </div>
-          </div>
-          <!-- <a href="#cta" class="btn-primary">Reservar lugar</a> -->
-        </div>
-        <!-- <div class="evento-sidebar">
-          <div>
-
-            <div class="evento-fecha-num">—</div>
-            <div class="evento-fecha-mes">¡No te pierdas el primer encuentro del año!</div>
-          </div>
-          <div>
-            <div class="evento-cupos">
-              <span>Cupos disponibles</span>
-              <strong>~50</strong>
-            </div>
-            <a href="#cta" class="btn-primary-dark">Asegurar mi cupo</a>
-          </div>
-        </div> -->
+      <div class="workshop-carousel-wrapper">
+        <button class="workshop-arrow workshop-arrow-prev" id="eventosPrev" aria-label="Anterior" type="button">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+        <div class="workshop-grid" id="eventosList"></div>
+        <button class="workshop-arrow workshop-arrow-next" id="eventosNext" aria-label="Siguiente" type="button">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
       </div>
+      <div class="workshop-dots" id="eventosDots"></div>
     </div>
   </section>
 
@@ -2451,7 +2412,7 @@
           <h5>Navegación</h5>
           <ul>
             <li><a href="#sobre">Quiénes somos</a></li>
-            <li><a href="#evento">Próximo evento</a></li>
+            <li><a href="#evento">Eventos</a></li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#workshop">Workshops</a></li>
             <li><a href="#galeria">Encuentros</a></li>
@@ -2688,12 +2649,12 @@
     }
 
     function renderSelectedEvent() {
-      const eventItem = galleryEvents[selectedEvent];
-      if (!eventItem || !galeriaFeatured || !carouselTrack) return;
+      if (!galeriaFeatured || !carouselTrack) return;
 
-      galleryItems = eventItem.photos;
-      const featuredPhotos = eventItem.photos.slice(0, 4);
-      const carouselPhotos = eventItem.photos.slice(4);
+      // Combinar todas las fotos de todos los eventos en una sola lista
+      galleryItems = galleryEvents.flatMap(event => event.photos);
+      const featuredPhotos = galleryItems.slice(0, 4);
+      const carouselPhotos = galleryItems.slice(4);
 
       galeriaFeatured.innerHTML = '';
       featuredPhotos.forEach((photo, index) => {
@@ -2705,9 +2666,9 @@
         carouselTrack.appendChild(createGalleryButton(photo, index + featuredPhotos.length, 'carousel'));
       });
 
-      if (galeriaEventoActivo) {
-        galeriaEventoActivo.textContent = `${eventItem.year} · ${eventItem.date} · ${eventItem.title}`;
-      }
+      // Ocultar los tabs de eventos y el texto del evento activo
+      if (galeriaEventos) galeriaEventos.style.display = 'none';
+      if (galeriaEventoActivo) galeriaEventoActivo.style.display = 'none';
 
       if (galeriaCarousel) {
         galeriaCarousel.style.display = carouselPhotos.length ? 'block' : 'none';
@@ -2715,13 +2676,170 @@
 
       slides = Array.from(carouselTrack.querySelectorAll('.carousel-slide'));
       page = 0;
-      renderEventTabs();
       renderCarousel();
     }
 
     if (galeriaFeatured && carouselTrack) {
       renderSelectedEvent();
     }
+
+    // ─── Eventos Section (formato workshop) ───
+    const eventos = [
+      {
+        date: '2026-06-13',
+        time: '11:00',
+        title: 'Conversatorio interactivo con Tomás Mosciatti',
+        description: '',
+        link: 'https://marcelo-san-martin.flycrew.com/e/ce56d2d7526ac4ae/register',
+        photos: [
+          { src: 'https://lh3.googleusercontent.com/u/0/d/1YZ3wP9iYqvKdKHKvmQpoSx9MK6q1VQbN', caption: 'Conversatorio Tomás Mosciatti' },
+        ],
+        buttonText: 'Compra tu entrada aquí'
+      }
+    ];
+
+    function renderEventos() {
+      var list = document.getElementById('eventosList');
+      var heading = document.querySelector('#evento h2');
+      var wrapper = list ? list.parentElement : null;
+      var dotsEl = document.getElementById('eventosDots');
+      var prevBtn = document.getElementById('eventosPrev');
+      var nextBtn = document.getElementById('eventosNext');
+      if (!list) return;
+
+      list.innerHTML = '';
+      if (dotsEl) dotsEl.innerHTML = '';
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+
+      var sorted = sortWorkshopsByDateDesc(eventos);
+
+      if (sorted.length === 0) {
+        list.innerHTML = '<p class="workshop-empty">Próximamente nuevos eventos</p>';
+        return;
+      }
+
+      if (sorted.length > 1) {
+        if (prevBtn) prevBtn.style.display = '';
+        if (nextBtn) nextBtn.style.display = '';
+      }
+
+      sorted.forEach(function (eventItem) {
+        var card = document.createElement('div');
+        card.className = 'workshop-card';
+
+        // Hero image
+        if (eventItem.photos && eventItem.photos.length > 0) {
+          var hero = document.createElement('div');
+          hero.className = 'workshop-hero';
+          hero.innerHTML = '<img src="' + eventItem.photos[0].src + '" alt="' + (eventItem.photos[0].caption || eventItem.title) + '" loading="lazy">';
+
+          if (eventItem.photos.length > 1) {
+            var badge = document.createElement('span');
+            badge.className = 'workshop-photo-badge';
+            badge.textContent = '1/' + eventItem.photos.length;
+            hero.appendChild(badge);
+          }
+
+          hero.addEventListener('click', function (event) {
+            event.stopPropagation();
+            galleryItems = eventItem.photos;
+            openLightbox(0);
+          });
+
+          card.appendChild(hero);
+        }
+
+        // Card body
+        var body = document.createElement('div');
+        body.className = 'workshop-card-body';
+
+        var dateEl = document.createElement('div');
+        dateEl.className = 'workshop-date';
+        dateEl.textContent = formatWorkshopDate(eventItem.date, eventItem.time);
+        body.appendChild(dateEl);
+
+        var titleEl = document.createElement('h3');
+        titleEl.className = 'workshop-title';
+        titleEl.textContent = eventItem.title;
+        body.appendChild(titleEl);
+
+        if (eventItem.description) {
+          var descEl = document.createElement('p');
+          descEl.className = 'workshop-desc';
+          descEl.textContent = eventItem.description;
+          body.appendChild(descEl);
+        }
+
+        if (eventItem.link && eventItem.link.trim() !== '') {
+          var linkEl = document.createElement('a');
+          linkEl.className = 'workshop-link';
+          linkEl.href = eventItem.link;
+          linkEl.target = '_blank';
+          linkEl.rel = 'noopener noreferrer';
+          linkEl.textContent = eventItem.buttonText || 'Participa aquí';
+          body.appendChild(linkEl);
+        }
+
+        card.appendChild(body);
+        list.appendChild(card);
+      });
+
+      // Centrar cards cuando hay pocas
+      if (sorted.length <= 2) {
+        list.classList.add('workshop-grid--centered');
+      } else {
+        list.classList.remove('workshop-grid--centered');
+      }
+
+      // Scroll suave entre cards
+      var cards = list.querySelectorAll('.workshop-card');
+      var currentIndex = 0;
+
+      function updateDots() {
+        if (!dotsEl) return;
+        dotsEl.innerHTML = '';
+        cards.forEach(function (_, i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'workshop-dot' + (i === currentIndex ? ' active' : '');
+          dot.addEventListener('click', function () {
+            currentIndex = i;
+            scrollToCard(i);
+          });
+          dotsEl.appendChild(dot);
+        });
+      }
+
+      function scrollToCard(index) {
+        if (!cards[index]) return;
+        cards[index].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        currentIndex = index;
+        updateDots();
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          if (currentIndex > 0) {
+            currentIndex--;
+            scrollToCard(currentIndex);
+          }
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            scrollToCard(currentIndex);
+          }
+        });
+      }
+
+      updateDots();
+    }
+
+    renderEventos();
 
     const lightbox = document.getElementById('lightbox');
     const lightboxContent = document.getElementById('lightboxContent');
@@ -2822,19 +2940,7 @@
     // 8. Regresión: la galería de Encuentros sigue abriendo sus propias fotos
 
     const workshops = [
-      {
-        date: '2026-06-13',
-        time: '11:00',
-        title: 'Conversatorio interactivo con Tomás Mosciatti',
-        description: '',
-        link: 'https://marcelo-san-martin.flycrew.com/e/ce56d2d7526ac4ae/register',
-        photos: [
-          { src: 'https://lh3.googleusercontent.com/u/0/d/1YZ3wP9iYqvKdKHKvmQpoSx9MK6q1VQbN', caption: '' },
-         
-        ],
-        buttonText: 'Compra tu entrada aquí'
-
-      },
+     
       {
         date: '2026-05-19',
         time: '20:00',
